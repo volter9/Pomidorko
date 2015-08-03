@@ -164,7 +164,7 @@ button {
 }
 
 .resting #about {
-    border-bottom-color: #68C4DB;
+    border-bottom-color: #9ED9E8;
 }
 
 .resting #timer-control {
@@ -195,6 +195,8 @@ button {
     position: absolute;
     top: 10px;
     right: 30px;
+    
+    padding: 0.8em 0px;
 }
 
 .overlay h1 {
@@ -261,6 +263,7 @@ button {
     
     display: inline-block;
     padding: 0.25em 0.5em;
+    margin: 0px 0.5em;
     width: 70px;
 }
 
@@ -276,4 +279,27 @@ button {
 
 .settings .separator {
     margin-top: 3em;
+}
+
+@-webkit-keyframes show-settings {
+    from { -webkit-transform: translateX(100%); }
+    to   { -webkit-transform: translateX(0%); }
+}
+
+@-webkit-keyframes hide-settings {
+    from { -webkit-transform: translateX(0%); }
+    to   { -webkit-transform: translateX(100%); }
+}
+
+.settings-appear {
+    animation: show-settings 1s;
+    -webkit-animation: show-settings 1s;
+}
+
+.settings-disappear {
+    display: block;
+    -webkit-transform: translateX(100%);
+    
+    animation: hide-settings 1s;
+    -webkit-animation: hide-settings 1s;
 }
