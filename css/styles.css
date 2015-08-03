@@ -232,16 +232,30 @@ button {
     to   { -webkit-transform: translateY(100%); }
 }
 
+@keyframes show-about {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0%); }
+}
+
+@keyframes hide-about {
+    from { transform: translateY(0%); }
+    to   { transform: translateY(100%); }
+}
+
 .about.hidden {
     display: block;
+    
+    transform: translateY(100%);
     -webkit-transform: translateY(100%);
 }
 
 .about-appear {
+    animation: show-about 0.5s;
     -webkit-animation: show-about 0.5s;
 }
 
-.about-disappear {    
+.about-disappear {
+    animation: hide-about 0.5s;
     -webkit-animation: hide-about 0.5s;
 }
 
@@ -316,15 +330,29 @@ button {
     to   { -webkit-transform: translateX(100%); }
 }
 
+@keyframes show-settings {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0%); }
+}
+
+@keyframes hide-settings {
+    from { transform: translateX(0%); }
+    to   { transform: translateX(100%); }
+}
+
 .settings.hidden {
     display: block;
+    
+    transform: translateX(100%);
     -webkit-transform: translateX(100%);
 }
 
 .settings-appear {
+    animation: show-settings 0.5s;
     -webkit-animation: show-settings 0.5s;
 }
 
 .settings-disappear {
+    animation: hide-settings 0.5s;
     -webkit-animation: hide-settings 0.5s;
 }
