@@ -143,33 +143,6 @@
                 type="text/javascript"></script>
         <script type="text/javascript">
             App.initiate(document.getElementById('container'));
-            
-            var $ = function (id) { return document.querySelector(id); };
-            var bind = function (element, event, callback) { 
-                element.addEventListener(event, callback);
-            };
-            
-            bind($('#settings'), 'click', function () {
-                var settings = $('.settings'),
-                    hidden = settings.classList.contains('hidden');
-                
-                settings.classList.toggle('hidden', !hidden);
-                settings.classList.toggle('settings-appear', hidden);
-                settings.classList.toggle('settings-disappear', !hidden);
-                
-                $('#container').className = !hidden ? 'running' : 'resting';
-            });
-            
-            bind($('#about'), 'click', function () {
-                var about = $('.about'),
-                    hidden = about.classList.contains('hidden');
-                
-                about.classList.toggle('hidden', !hidden);
-            });
-            
-            bind($('.about .close'), 'click', function () {
-                $('.about').classList.add('hidden');
-            });
         </script>
     </body>
 </html>

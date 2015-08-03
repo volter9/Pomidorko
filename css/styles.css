@@ -48,6 +48,8 @@ button {
  */
 
 #container {
+    overflow: hidden;
+    
     position: relative;
     top: 0px;
     left: 0px;
@@ -220,6 +222,29 @@ button {
     margin-bottom: 1em;
 }
 
+@-webkit-keyframes show-about {
+    from { -webkit-transform: translateY(100%); }
+    to   { -webkit-transform: translateY(0%); }
+}
+
+@-webkit-keyframes hide-about {
+    from { -webkit-transform: translateY(0%); }
+    to   { -webkit-transform: translateY(100%); }
+}
+
+.about.hidden {
+    display: block;
+    -webkit-transform: translateY(100%);
+}
+
+.about-appear {
+    -webkit-animation: show-about 0.5s;
+}
+
+.about-disappear {    
+    -webkit-animation: hide-about 0.5s;
+}
+
 /**
  * Settings
  */
@@ -291,15 +316,15 @@ button {
     to   { -webkit-transform: translateX(100%); }
 }
 
+.settings.hidden {
+    display: block;
+    -webkit-transform: translateX(100%);
+}
+
 .settings-appear {
-    animation: show-settings 1s;
-    -webkit-animation: show-settings 1s;
+    -webkit-animation: show-settings 0.5s;
 }
 
 .settings-disappear {
-    display: block;
-    -webkit-transform: translateX(100%);
-    
-    animation: hide-settings 1s;
-    -webkit-animation: hide-settings 1s;
+    -webkit-animation: hide-settings 0.5s;
 }
