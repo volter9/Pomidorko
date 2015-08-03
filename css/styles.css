@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    color: #fff;
+    font-family: Arial;
+    
+    height: 100%;
+}
+
+button {
+    cursor: pointer;
+}
+
+.running {
+    background-color: #ff001a;
+}
+
+.resting {
+    background-color: #00b3d2;
+}
+
+.about {
+    background-color: #69d07e;
+}
+
+.hidden {
+    display: none;
+}
+
+.clearfix:after {
+    content: "";
+    font-size: 0px;
+    visibility: hidden;
+    
+    clear: both;
+    display: block;
+    height: 0px;
+    width: 100%;
+}
+
+/**
+ * Container
+ */
+
+#container {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    
+    height: 100%;
+}
+
+#title, 
+#settings {
+    position: absolute;
+    top: 10px;
+    
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0.8em 2em;
+}
+
+#title {
+    left: 30px;
+    
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#settings {
+    background-color: #EB6169;
+    border: 0px;
+    border-radius: 5px;
+    color: #fff;
+    
+    right: 30px;
+    z-index: 9000;
+}
+
+#goals,
+#about {
+    color: #fff;
+    font-size: 14px;
+    line-height: 100%;
+    
+    position: absolute;
+    bottom: 30px;
+    
+    padding-bottom: 1px;
+}
+
+#goals {
+    left: 30px;
+}
+
+#goals .current {
+    font-size: 2em;
+}
+
+#about {
+    background-color: transparent;
+    border: 0px;
+    border-bottom: 1px solid #EB6169;
+    
+    right: 30px;
+    z-index: 9002;
+}
+
+/**
+ * Timer itself
+ */
+
+#timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    
+    height: 60%;
+    width: 60%;
+    text-align: center;
+}
+
+#timer-time {
+    font-family: Lato;
+    font-size: 6em;
+    font-weight: 100;
+}
+
+#timer-control {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    
+    background-color: #EB6169;
+    border-radius: 100%;
+    font-size: 4em;
+    line-height: 140px;
+    text-align: center;
+    
+    height: 140px;
+    margin: 0px auto;
+    width: 140px;
+}
+
+#timer-control.play {
+    padding-left: 10px;
+}
+
+/**
+ * Rest color support
+ */
+
+.resting #settings {
+    background-color: #9ED9E8;
+}
+
+.resting #about {
+    border-bottom-color: #68C4DB;
+}
+
+.resting #timer-control {
+    background-color: #68C4DB;
+}
+
+/**
+ * Overlay about us
+ */
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 9001;
+    
+    padding: 10px 30px;
+}
+
+.overlay .close {
+    background-color: transparent;
+    border: 0px;
+    color: #fff;
+    font-size: 18px;
+    
+    position: absolute;
+    top: 10px;
+    right: 30px;
+}
+
+.overlay h1 {
+    font-size: 18px;
+    margin-bottom: 1.8em;
+    
+    padding: 0.8em 0px;
+    padding-bottom: 0px;
+}
+
+.overlay p {
+    line-height: 128%;
+    
+    margin-bottom: 1em;
+}
+
+.overlay h2 {
+    font-size: 14px;
+    
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+/**
+ * Settings
+ */
+
+.settings {
+    background-color: #68C4DB;
+    
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+ 
+    width: 30%;
+    z-index: 8999;
+    padding-top: 10em;
+}
+
+.settings ul {
+    list-style: none;
+    padding: 0px 30px;
+}
+
+.settings ul li {
+    line-height: 200%;
+    margin-bottom: 1em;
+}
+
+.settings .ui-control {
+    line-height: 150%;
+    float: right;
+}
+
+.settings .ui-control .fa {
+    font-size: 14px;
+}
+
+.settings .ui-control span {
+    border: 1px solid #CDECF4;
+    border-radius: 4px;
+    text-align: right;
+    
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    width: 70px;
+}
+
+.settings .ui-control input {
+    background-color: transparent;
+    border: 0px;
+    color: #fff;
+    font-size: 14px;
+    text-align: right;
+    
+    width: 18px;
+}
+
+.settings .separator {
+    margin-top: 3em;
+}

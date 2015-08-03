@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8"/>
+        <title>Помидорковый Таймер</title>
+        
+        <link href="css/styles.css"
+              rel="stylesheet"
+              type="text/css"/>
+        
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    </head>
+    
+    <body class="resting">
+        <section id="container">
+            <h1 id="title">
+                Помидорковый таймер
+            </h1>
+            
+            <button id="settings">
+                Настройки
+            </button>
+            
+            <div id="timer">
+                <div id="timer-time">
+                    24:44
+                </div>
+                
+                <div id="timer-scale">
+                    
+                </div>
+                
+                <div id="timer-control">
+                    <i class="fa fa-pause"></i>
+                </div>
+            </div>
+                
+            </div>
+            
+            <div id="goals">
+                <span class="current">4</span> из 
+                <span class="total">12</span> отработанных помидорок
+                <span class="status">— Лох!</span>
+            </div>
+            
+            <button id="about">
+                О проекте
+            </button>
+            
+            <div class="overlay hidden about">
+                <button class="close">
+                    <i class="fa fa-times"></i>
+                </button>
+                
+                <h1>Помидорковый таймер</h1>
+                
+                <p>
+                    Помогает концентрироваться на работе<br/>
+                    из соседней вкладки
+                </p>
+                
+                <p>
+                    Разработка — Евгений<br/>
+                    Дизайн — Паша Омелёхин
+                </p>
+                
+                <h2>
+                    Поддержать проект
+                </h2>
+                
+                <!-- Тут будет блок с донатам -->
+                <div class="donate">
+                    
+                </div>
+            </div>
+            
+            <!-- Настройки -->
+            <div class="settings">
+                <ul>
+                    <li class="clearfix">
+                        Время работы
+                        <div class="ui-control">
+                            <i class="fa fa-minus"></i>
+                            <span>
+                                <input type="text" value="25">
+                                мин
+                            </span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="clearfix">
+                        Маленький перерыв
+                        <div class="ui-control">
+                            <i class="fa fa-minus"></i>
+                            <span>
+                                <input type="text" value="5">
+                                мин
+                            </span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="clearfix">
+                        Большой перерыв
+                        <div class="ui-control">
+                            <i class="fa fa-minus"></i>
+                            <span>
+                                <input type="text" value="15">
+                                мин
+                            </span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="clearfix separator">
+                        Помидорок в раунде
+                        <div class="ui-control">
+                            <i class="fa fa-minus"></i>
+                            <span>
+                                <input type="text" value="4">
+                            </span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                    
+                    <li class="clearfix">
+                        Помидорок за день
+                        <div class="ui-control">
+                            <i class="fa fa-minus"></i>
+                            <span>
+                                <input type="text" value="12">
+                            </span>
+                            <i class="fa fa-plus"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        
+        <script src="js/main.js" 
+                type="text/javascript"></script>
+        <script type="text/javascript">
+            App.initiate();
+            
+            var $ = function (id) { document.getElementById(id); };
+            var bind = function (element, event, callback) { 
+                element.addEventListener(event, callback);
+            };
+        </script>
+    </body>
+</html>
