@@ -8,7 +8,6 @@ html,
 body {
     color: #fff;
     font-family: Arial;
-    
     height: 100%;
 }
 
@@ -17,15 +16,15 @@ button {
 }
 
 .running {
-    background-color: #ff001a;
+    background-color: #ed4455;
 }
 
 .resting {
-    background-color: #00b3d2;
+    background-color: #11afcb;
 }
 
 .about {
-    background-color: #69d07e;
+    background-color: #7ac783;
 }
 
 .hidden {
@@ -75,7 +74,7 @@ button {
 }
 
 #settings {
-    background-color: #EB6169;
+    background-color: rgba(255,255,255,.3);
     border: 0px;
     border-radius: 5px;
     color: #fff;
@@ -107,7 +106,7 @@ button {
 #about {
     background-color: transparent;
     border: 0px;
-    border-bottom: 1px solid #EB6169;
+    border-bottom: 1px solid rgba(255,255,255,.2);
     
     right: 30px;
     z-index: 9002;
@@ -264,21 +263,23 @@ button {
  */
 
 .settings {
-    background-color: #68C4DB;
+    background-color: rgba(255,255,255,.05);
+	box-shadow: 0 0 16px -1px rgba(0,0,0,.1);
     
     position: absolute;
     top: 0px;
     bottom: 0px;
     right: 0px;
  
-    width: 30%;
+    width: 32%;
     z-index: 8999;
-    padding-top: 10em;
+    padding-top: 6em;
 }
 
 .settings ul {
     list-style: none;
-    padding: 0px 30px;
+    padding: 2em 40px 0;
+	border-top: 1px solid rgba(255,255,255,.2);
 }
 
 .settings ul li {
@@ -296,7 +297,7 @@ button {
 }
 
 .settings .ui-control span {
-    border: 1px solid #CDECF4;
+    border: 1px solid rgba(255,255,255,.6);
     border-radius: 4px;
     text-align: right;
     
