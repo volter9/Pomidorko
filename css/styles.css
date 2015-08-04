@@ -68,6 +68,7 @@ button {
 
 #title {
     left: 30px;
+    z-index: 9003;
     
     padding-left: 0px;
     padding-right: 0px;
@@ -125,7 +126,7 @@ button {
     -webkit-transform: translate(-50%, -50%);
     
     height: 60%;
-    width: 60%;
+    width: 100%;
     text-align: center;
 }
 
@@ -143,6 +144,7 @@ button {
     
     background-color: #EB6169;
     border-radius: 100%;
+    cursor: pointer;
     font-size: 4em;
     line-height: 140px;
     text-align: center;
@@ -164,10 +166,6 @@ button {
     background-color: #9ED9E8;
 }
 
-.resting #about {
-    border-bottom-color: #9ED9E8;
-}
-
 .resting #timer-control {
     background-color: #68C4DB;
 }
@@ -185,6 +183,7 @@ button {
     z-index: 9001;
     
     padding: 10px 30px;
+    padding-top: 5em;
 }
 
 .overlay .close {
@@ -249,13 +248,13 @@ button {
 }
 
 .about-appear {
-    animation: show-about 0.5s;
-    -webkit-animation: show-about 0.5s;
+    animation: show-about 0.4s;
+    -webkit-animation: show-about 0.4s;
 }
 
 .about-disappear {
-    animation: hide-about 0.5s;
-    -webkit-animation: hide-about 0.5s;
+    animation: hide-about 0.4s;
+    -webkit-animation: hide-about 0.4s;
 }
 
 /**
@@ -349,11 +348,11 @@ button {
 }
 
 .settings-appear {
-    animation: show-settings 0.5s;
-    -webkit-animation: show-settings 0.5s;
+    animation: show-settings 0.4s;
+    -webkit-animation: show-settings 0.4s;
 }
 
 .settings-disappear {
-    animation: hide-settings 0.5s;
-    -webkit-animation: hide-settings 0.5s;
+    animation: hide-settings 0.4s;
+    -webkit-animation: hide-settings 0.4s;
 }

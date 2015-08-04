@@ -1,7 +1,8 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.App = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var AppView  = require('./views/app'),
     Settings = require('./models/settings'),
-    Goals    = require('./models/goals');
+    Goals    = require('./models/goals'),
+    Mapper   = require('./ls');
 
 /**
  * Main app
@@ -18,6 +19,17 @@ var App = function (node) {
     });
     
     this.goals.emit('change');
+    this.settings.emit('change');
+    
+    var self = this;
+    
+    this.goals.on('change', function () {
+        Mapper.save(self.goals);
+    });
+    
+    this.settings.on('change', function () {
+        Mapper.save(self.settings);
+    });
 };
 
 /**
@@ -30,10 +42,10 @@ App.initiate = function (node) {
 };
 
 module.exports = App;
-},{"./models/goals":6,"./models/settings":7,"./views/app":12}],2:[function(require,module,exports){
+},{"./ls":5,"./models/goals":6,"./models/settings":7,"./views/app":12}],2:[function(require,module,exports){
 var utils = require('./utils');
 
-var events = function (proto) {
+module.exports = function (proto) {
     /**
      * Bind an event
      * 
@@ -74,8 +86,6 @@ var events = function (proto) {
         });
     };
 };
-
-module.exports = events;
 },{"./utils":4}],3:[function(require,module,exports){
 /**
  * Get unique integer generator
@@ -279,6 +289,8 @@ module.exports = {
         
         Mapper.fetch('settings', settings);
         
+        console.log(settings.all(), settings.isNew(), settings.id);
+        
         if (settings.isNew()) {
             settings = this.bootstrap(Mapper);
         }
@@ -386,6 +398,10 @@ Mapper.prototype.create = function (data, model) {
 Mapper.prototype.fetch = function (id, model, callback) {
     if (this.storage[id]) {
         model.merge(this.storage[id]);
+        
+        if (this.storage[id]) {
+            model.id = id;
+        }
         
         callback && callback();
     }
@@ -650,6 +666,9 @@ About.prototype.initialize = function () {
     this.bind('.close', 'click', this.close);
 };
 
+/**
+ * Showing/hiding the about view
+ */
 About.prototype.show = function () {
     this.node.classList.remove('hidden');
     
@@ -696,7 +715,8 @@ AppView.prototype.initialize = function () {
     });
     
     this.settings = new Settings(this.find('.settings'), {
-        button: this.find('#settings')
+        button:   this.find('#settings'),
+        settings: this.data.settings
     });
 };
 
@@ -729,7 +749,8 @@ Goals.prototype.render = function () {
 
 module.exports = Goals;
 },{"../mvc/view":10}],14:[function(require,module,exports){
-var View = require('../mvc/view');
+var View  = require('../mvc/view'),
+    utils = require('../helpers/utils');
 
 /**
  * Settings view
@@ -745,16 +766,29 @@ Settings.prototype = Object.create(View.prototype);
 
 Settings.prototype.initialize = function () {
     this.data.button.addEventListener('click', this.toggle.bind(this));
+    this.data.settings.on('change', this.render.bind(this));
 };
 
+/**
+ * Toggle the view
+ */
 Settings.prototype.toggle = function () {
     var hidden = this.node.classList.contains('hidden');
     
-    this.node.classList.toggle('hidden', !hidden);
+    this.node.classList.toggle('hidden');
     this.node.classList.toggle('settings-appear', hidden);
     this.node.classList.toggle('settings-disappear', !hidden);
 };
 
+Settings.prototype.render = function () {
+    var self = this,
+        data = this.data.settings.all();
+    
+    utils.each(data, function (value, key) {
+        self.find('input.' + key).value = value;
+    });
+};
+
 module.exports = Settings;
-},{"../mvc/view":10}]},{},[1])(1)
+},{"../helpers/utils":4,"../mvc/view":10}]},{},[1])(1)
 });

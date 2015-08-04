@@ -14,22 +14,14 @@
     
     <body>
         <section class="running" id="container">
-            <h1 id="title">
-                Помидорковый таймер
-            </h1>
+            <h1 id="title">Помидорковый таймер</h1>
             
-            <button id="settings">
-                Настройки
-            </button>
+            <button id="settings">Настройки</button>
             
             <div id="timer">
-                <div id="timer-time">
-                    24:44
-                </div>
+                <div id="timer-time">24:44</div>
                 
-                <div id="timer-scale">
-                    
-                </div>
+                <div id="timer-scale"></div>
                 
                 <div id="timer-control">
                     <i class="fa fa-pause"></i>
@@ -41,38 +33,23 @@
             <div id="goals">
                 <span class="current">4</span> из 
                 <span class="total">12</span> отработанных помидорок
-                <span class="status">— Лох!</span>
+                <span class="status">&mdash; Лох!</span>
             </div>
             
-            <button id="about">
-                О проекте
-            </button>
+            <button id="about">О проекте</button>
             
             <div class="overlay hidden about">
                 <button class="close">
                     <i class="fa fa-times"></i>
                 </button>
                 
-                <h1>Помидорковый таймер</h1>
+                <p>Помогает концентрироваться на работе<br/>из соседней вкладки</p>
+                <p>Разработка — Евгений<br/>Дизайн — Паша Омелёхин</p>
                 
-                <p>
-                    Помогает концентрироваться на работе<br/>
-                    из соседней вкладки
-                </p>
-                
-                <p>
-                    Разработка — Евгений<br/>
-                    Дизайн — Паша Омелёхин
-                </p>
-                
-                <h2>
-                    Поддержать проект
-                </h2>
+                <h2>Поддержать проект</h2>
                 
                 <!-- Тут будет блок с донатам -->
-                <div class="donate">
-                    
-                </div>
+                <div class="donate"></div>
             </div>
             
             <!-- Настройки -->
@@ -83,8 +60,7 @@
                         <div class="ui-control">
                             <i class="fa fa-minus"></i>
                             <span>
-                                <input type="text" value="25">
-                                мин
+                                <input class="time" type="text" value="25"> мин
                             </span>
                             <i class="fa fa-plus"></i>
                         </div>
@@ -95,8 +71,7 @@
                         <div class="ui-control">
                             <i class="fa fa-minus"></i>
                             <span>
-                                <input type="text" value="5">
-                                мин
+                                <input class="shortBreak" type="text" value="5"> мин
                             </span>
                             <i class="fa fa-plus"></i>
                         </div>
@@ -107,8 +82,7 @@
                         <div class="ui-control">
                             <i class="fa fa-minus"></i>
                             <span>
-                                <input type="text" value="15">
-                                мин
+                                <input class="longBreak" type="text" value="15"> мин
                             </span>
                             <i class="fa fa-plus"></i>
                         </div>
@@ -119,7 +93,7 @@
                         <div class="ui-control">
                             <i class="fa fa-minus"></i>
                             <span>
-                                <input type="text" value="4">
+                                <input class="round" type="text" value="4">
                             </span>
                             <i class="fa fa-plus"></i>
                         </div>
@@ -130,7 +104,7 @@
                         <div class="ui-control">
                             <i class="fa fa-minus"></i>
                             <span>
-                                <input type="text" value="12">
+                                <input class="total" type="text" value="12">
                             </span>
                             <i class="fa fa-plus"></i>
                         </div>
