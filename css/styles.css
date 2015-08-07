@@ -4,6 +4,12 @@
     padding: 0px;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 html,
 body {
     color: #fff;
@@ -275,6 +281,12 @@ button {
     padding-top: 6em;
 }
 
+.settings .fa-minus,
+.settings .fa-plus {
+    display: inline-block;
+    cursor: pointer;
+}
+
 .settings ul {
     list-style: none;
     padding: 2em 40px 0;
@@ -303,7 +315,7 @@ button {
     display: inline-block;
     padding: 0.25em 0.5em;
     margin: 0px 0.5em;
-    width: 70px;
+    width: 80px;
 }
 
 .settings .ui-control input {
@@ -311,9 +323,10 @@ button {
     border: 0px;
     color: #fff;
     font-size: 14px;
+    outline: none;
     text-align: right;
     
-    width: 18px;
+    width: 28px;
 }
 
 .settings .separator {
