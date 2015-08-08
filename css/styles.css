@@ -142,6 +142,11 @@ button {
     font-weight: 100;
 }
 
+#timer-scale {
+    margin-top: 3.5em;
+    margin-left: calc(50% - 10px);
+}
+
 #timer-control {
     position: absolute;
     bottom: 0px;
@@ -154,6 +159,10 @@ button {
     font-size: 4em;
     line-height: 140px;
     text-align: center;
+    
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
     
     height: 140px;
     margin: 0px auto;
@@ -268,8 +277,8 @@ button {
  */
 
 .settings {
-    background-color: rgba(255,255,255,.05);
-	box-shadow: 0 0 16px -1px rgba(0,0,0,.1);
+    background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 0 16px -1px rgba(0, 0, 0, 0.1);
     
     position: absolute;
     top: 0px;
@@ -301,9 +310,13 @@ button {
 .settings .ui-control {
     line-height: 150%;
     float: right;
+    
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
-.settings .ui-control .fa {
+#settings .ui-control .fa {
     font-size: 14px;
 }
 
@@ -327,6 +340,10 @@ button {
     text-align: right;
     
     width: 28px;
+}
+
+.settings .ui-full-control input {
+    width: 100%;
 }
 
 .settings .separator {

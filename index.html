@@ -20,12 +20,16 @@
             
             <!-- Сам таймер -->
             <div id="timer">
-                <div id="timer-time">24:44</div>
+                <div id="timer-time">00:00</div>
                 
-                <div id="timer-scale"></div>
+                <div id="timer-scale">
+                    <div class="timer-wrapper">
+                        <img src="img/scale.png" alt="scale"/>
+                    </div>
+                </div>
                 
-                <div id="timer-control">
-                    <i class="fa fa-pause"></i>
+                <div class="play" id="timer-control">
+                    <i class="fa fa-play"></i>
                 </div>
             </div>
                 
@@ -92,7 +96,7 @@
                     
                     <li class="clearfix separator">
                         Помидорок в раунде
-                        <div class="ui-control">
+                        <div class="ui-control ui-full-control">
                             <i class="fa fa-minus"></i>
                             <span>
                                 <input class="round" type="text" value="4" maxlength="2">
@@ -103,7 +107,7 @@
                     
                     <li class="clearfix">
                         Помидорок за день
-                        <div class="ui-control">
+                        <div class="ui-control ui-full-control">
                             <i class="fa fa-minus"></i>
                             <span>
                                 <input class="total" type="text" value="12" maxlength="2">
