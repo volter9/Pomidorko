@@ -5,9 +5,9 @@ e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined
 if(!a&&h)return h(r,!0)
 if(o)return o(r,!0)
 var u=new Error("Cannot find module '"+r+"'")
-throw u.code="MODULE_NOT_FOUND",u}var c=i[r]={exports:{}}
-e[r][0].call(c.exports,function(t){var i=e[r][1][t]
-return s(i?i:t)},c,c.exports,t,e,i,n)}return i[r].exports}for(var o="function"==typeof require&&require,r=0;r<n.length;r++)s(n[r])
+throw u.code="MODULE_NOT_FOUND",u}var l=i[r]={exports:{}}
+e[r][0].call(l.exports,function(t){var i=e[r][1][t]
+return s(i?i:t)},l,l.exports,t,e,i,n)}return i[r].exports}for(var o="function"==typeof require&&require,r=0;r<n.length;r++)s(n[r])
 return s}({1:[function(t,e,i){var n=t("./views/app"),s=t("./models/settings"),o=t("./models/goals"),r=t("./ls"),a=function(t){this.settings=s.get(),this.goals=o.get(this.settings),this.view=new n(t,{settings:this.settings,goals:this.goals}),this.initialize(this.settings,this.goals)}
 a.prototype.initialize=function(t,e){e.emit("change"),t.emit("change"),e.on("change",function(){r.save(e)}),t.on("change",function(){r.save(t)})},a.initiate=function(t){a.instance=new a(t)},e.exports=a},{"./ls":6,"./models/goals":7,"./models/settings":8,"./views/app":15}],2:[function(t,e,i){var n=t("./utils")
 e.exports=function(t){t.on=function(t,e){this._events||(this._events={}),this._events[t]||(this._events[t]=[]),this._events[t].push(e)},t.emit=function(t){if(this._events&&this._events[t]){var e=n.toArray(arguments).slice(1)
@@ -38,7 +38,7 @@ n(a.prototype),a.prototype.filter=function(t){},a.prototype.get=function(t){retu
 s.prototype.initialize=function(){},s.prototype.render=function(){},s.prototype.find=function(t){return this.node.querySelector(t)},s.prototype.bind=function(t,e,i){this.find(t).addEventListener(e,i.bind(this))},s.extend=n(s),e.exports=s},{"./extend":9}],13:[function(t,e,i){var n=t("./helpers/events"),s=function(t){this.startTime=null,this.endTime=null,this.remained=null,this.timer=null,this.view=t}
 n(s.prototype),s.prototype.start=function(t){this.timer||(t=this.remained?this.remained:1e3*t,this.startTime=Date.now(),this.endTime=this.startTime+t,this.timer=setInterval(this.tick.bind(this),80),this.emit("start"))},s.prototype.tick=function(){var t=this.endTime-Date.now()
 return 0>t?(this.view.render(0),this.stop()):void this.view.render(t/1e3)},s.prototype.pause=function(){clearInterval(this.timer),this.timer=null,this.remained=this.endTime-Date.now(),this.startTime=this.endTime=null},s.prototype.stop=function(){this.remained=this.endTime=this.startTime=null,clearInterval(this.timer),this.timer=null,this.emit("stop")},e.exports=s},{"./helpers/events":2}],14:[function(t,e,i){var n=t("../mvc/view"),s=n.extend({initialize:function(){this.data.button.addEventListener("click",this.show.bind(this)),this.bind(".close","click",this.close)},show:function(){this.node.classList.remove("hidden"),this.toggle(this.node.classList.contains("hidden"))},close:function(){this.node.classList.add("hidden"),this.toggle(this.node.classList.contains("hidden"))},toggle:function(t){this.node.classList.toggle("about-appear",!t),this.node.classList.toggle("about-disappear",t)}})
-e.exports=s},{"../mvc/view":12}],15:[function(t,e,i){var n=t("../mvc/view"),s=t("./goals"),o=t("./about"),r=t("./timer"),a=t("./settings"),h=n.extend({initialize:function(){this.timer=new r(this.find("#timer"),{settings:this.data.settings}),this.goals=new s(this.find("#goals"),{goals:this.data.goals}),this.about=new o(this.find(".about"),{button:this.find("#about")}),this.settings=new a(this.find(".settings"),{button:this.find("#settings"),settings:this.data.settings})}})
+e.exports=s},{"../mvc/view":12}],15:[function(t,e,i){var n=t("../mvc/view"),s=t("./goals"),o=t("./about"),r=t("./timer"),a=t("./settings"),h=n.extend({initialize:function(){this.timer=new r(this.find("#timer"),{settings:this.data.settings,goals:this.data.goals}),this.goals=new s(this.find("#goals"),{goals:this.data.goals}),this.about=new o(this.find(".about"),{button:this.find("#about")}),this.settings=new a(this.find(".settings"),{button:this.find("#settings"),settings:this.data.settings})}})
 e.exports=h},{"../mvc/view":12,"./about":14,"./goals":16,"./settings":17,"./timer":18}],16:[function(t,e,i){var n=t("../mvc/view"),s=n.extend({initialize:function(){this.data.goals.on("change",this.render.bind(this))},render:function(){var t=this.data.goals
 this.find(".current").innerHTML=t.get("current"),this.find(".total").innerHTML=t.get("total")}})
 e.exports=s},{"../mvc/view":12}],17:[function(t,e,i){var n=t("../mvc/view"),s=t("./ui-control"),o=t("../helpers/utils"),r=n.extend({initialize:function(){this.data.button.addEventListener("click",this.toggle.bind(this)),this.data.settings.on("change",this.render.bind(this))
@@ -47,8 +47,8 @@ o.toArray(this.node.querySelectorAll(".ui-control")).forEach(function(e){new s(e
 this.node.classList.toggle("hidden"),this.node.classList.toggle("settings-appear",t),this.node.classList.toggle("settings-disappear",!t)},render:function(){var t=this,e=this.data.settings.all()
 o.each(e,function(e,i){t.find("input."+i).value=e})}})
 e.exports=r},{"../helpers/utils":5,"../mvc/view":12,"./ui-control":19}],18:[function(t,e,i){var n=t("../mvc/view"),s=t("../timer"),o=function(t,e){return e.substr(t.length)+t},r=n.extend({initialize:function(){var t=this
-this.settings=this.data.settings,this.label=this.find("#timer-time"),this.timer=new s(this),this.bind("#timer-control","click",this.button),this.timer.on("stop",function(){t.toggle(!0)})},render:function(t){var e=Math.floor(t/60).toString(),i=Math.floor(t%60).toString()
-this.label.innerHTML=o(e,"00")+":"+o(i,"00")},button:function(){var t=this.find(".fa").classList.contains("fa-pause")
+this.settings=this.data.settings,this.goals=this.data.goals,this.label=this.find("#timer-time"),this.scale=this.find(".timer-wrapper"),this.timer=new s(this),this.bind("#timer-control","click",this.button),this.timer.on("stop",function(){t.toggle(!0),t.render(0)})},render:function(t){var e=Math.floor(t/60).toString(),i=Math.floor(t%60).toString(),n=t/60/55
+this.label.innerHTML=o(e,"00")+":"+o(i,"00"),this.scale.style.marginLeft=3300*-n+"px"},button:function(){var t=this.find(".fa").classList.contains("fa-pause")
 if(this.toggle(t),t)this.timer.pause()
 else{var e=60*this.settings.get("time")
 this.timer.start(e)}},toggle:function(t){var e=this.find(".fa")

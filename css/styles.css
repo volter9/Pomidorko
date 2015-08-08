@@ -147,6 +147,10 @@ button {
     margin-left: calc(50% - 10px);
 }
 
+.timer-wrapper {
+    width: 3300px;
+}
+
 #timer-control {
     position: absolute;
     bottom: 0px;
