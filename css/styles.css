@@ -161,7 +161,7 @@ button {
     border-radius: 100%;
     cursor: pointer;
     font-size: 4em;
-    line-height: 140px;
+    line-height: 160px;
     text-align: center;
     
     -moz-user-select: none;
@@ -173,8 +173,26 @@ button {
     width: 140px;
 }
 
+#timer-control span {
+    background-position: center center;
+    background-repeat: no-repeat;
+    
+    margin: 0px auto;
+    display: inline-block;
+    height: 64px;
+    width: 64px;
+}
+
+#timer-control .play {
+    background-image: url('../img/play.png');
+}
+
+#timer-control .pause {
+    background-image: url('../img/pause.png');
+}
+
 #timer-control.play {
-    padding-left: 10px;
+    padding-left: 6px;
 }
 
 /**
@@ -257,6 +275,12 @@ button {
 @keyframes hide-about {
     from { transform: translateY(0%); }
     to   { transform: translateY(100%); }
+}
+
+.about .donate {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
 }
 
 .about.hidden {
