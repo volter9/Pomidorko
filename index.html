@@ -1,3 +1,9 @@
+<!--
+    - Замена заголовка
+    - Замена favicon
+    - Починка ':00 -> ':59 задержку
+    - Поднять двоеточие во времени на 6 пикс.
+-->
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +18,7 @@
     </head>
     
     <body>
-        <section class="running" id="container">
+        <section id="container">
             <h1 id="title">Помидорковый таймер</h1>
             
             <button id="settings">Настройки</button>
@@ -37,7 +43,7 @@
             <div id="goals">
                 <span class="current">4</span> из 
                 <span class="total">12</span> отработанных помидорок
-                <span class="status">&mdash; Лох!</span>
+                <span class="hidden status">&mdash; Лох</span>
             </div>
             
             <button id="about">О проекте</button>
@@ -48,8 +54,8 @@
                     <img src="img/close.png"/>
                 </button>
                 
-                <p>Помогает концентрироваться на работе<br/>из соседней вкладки</p>
-                <p>Разработка — Евгений<br/>Дизайн — Паша Омелёхин</p>
+                <p class="subtitle">Помогает концентрироваться на работе<br/>из соседней вкладки</p>
+                <p class="credits">Разработка — Евгений<br/>Дизайн — Паша Омелёхин</p>
                 
                 <!-- Тут будет блок с донатам -->
                 <div class="donate">
@@ -60,7 +66,7 @@
             </div>
             
             <!-- Настройки -->
-            <div class="settings hidden">
+            <div class="hidden settings">
                 <ul>
                     <li class="clearfix">
                         Время работы

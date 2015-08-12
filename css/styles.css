@@ -4,16 +4,12 @@
     padding: 0px;
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
 html,
 body {
     color: #fff;
-    font-family: Arial;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    
     height: 100%;
 }
 
@@ -21,16 +17,8 @@ button {
     cursor: pointer;
 }
 
-.running {
-    background-color: #ed4455;
-}
-
 .resting {
-    background-color: #11afcb;
-}
-
-.about {
-    background-color: #7ac783;
+    background-color: #08B1CF !important;
 }
 
 .hidden {
@@ -53,6 +41,7 @@ button {
  */
 
 #container {
+    background-color: #ED4455;
     overflow: hidden;
     
     position: relative;
@@ -60,6 +49,9 @@ button {
     left: 0px;
     
     height: 100%;
+    /* Fuck small screens! */
+    min-height: 768px;
+    min-width:  1024px;
 }
 
 #title, 
@@ -137,14 +129,14 @@ button {
 }
 
 #timer-time {
-    font-family: Lato;
+    font-family: 'Lato', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
     font-size: 6em;
-    font-weight: 100;
+    font-weight: 200;
 }
 
 #timer-scale {
     margin-top: 3.5em;
-    margin-left: calc(50% - 10px);
+    margin-left: calc(50% - 11px);
 }
 
 .timer-wrapper {
@@ -192,15 +184,15 @@ button {
 }
 
 #timer-control.play {
-    padding-left: 6px;
+    padding-left: 10px;
 }
 
 /**
  * Rest color support
  */
 
-.resting #settings {
-    background-color: #9ED9E8;
+.resting .settings {
+    background-color: #15B5D1;
 }
 
 .resting #timer-control {
@@ -277,6 +269,22 @@ button {
     to   { transform: translateY(100%); }
 }
 
+.about {
+    background-color: #4ABC84;
+}
+
+.about .subtitle {
+    font-size: 14px; 
+    line-height: 1.25em; 
+    
+    margin-bottom: 1.2em;
+}
+
+.about .credits {
+    font-size: 13px; 
+    line-height: 1.6em;
+}
+
 .about .donate {
     position: absolute;
     bottom: 30px;
@@ -305,7 +313,7 @@ button {
  */
 
 .settings {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: #EE4E5E;
 	box-shadow: 0 0 16px -1px rgba(0, 0, 0, 0.1);
     
     position: absolute;
@@ -331,7 +339,7 @@ button {
 }
 
 .settings ul li {
-    line-height: 200%;
+    line-height: 32px;
     margin-bottom: 1em;
 }
 
