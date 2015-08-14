@@ -54,6 +54,22 @@ button {
     min-width:  1024px;
 }
 
+.pa-recess {
+    background-color: transparent;
+    border: 0px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 100%;
+    
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    
+    margin-left: -100px;
+    padding-bottom: 1px;
+    width: 200px;
+}
+
 .pa-title, 
 .pa-settings-button {
     position: absolute;
@@ -135,8 +151,8 @@ button {
 }
 
 #timer-time .colon {
-    position:relative;
-    top:-6px;
+    position: relative;
+    top: -10px;
 }
 
 #timer-scale {
@@ -279,6 +295,12 @@ button {
     background-color: #4ABC84;
 }
 
+.about a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-decoration: none;
+}
+
 .about .subtitle {
     font-size: 14px; 
     line-height: 1.25em; 
@@ -294,7 +316,12 @@ button {
 .about .donate {
     position: absolute;
     bottom: 30px;
-    left: 37px;
+    left: 30px;
+}
+
+.about .donate iframe {
+    position: relative;
+    left: -8px;
 }
 
 .about.hidden {
