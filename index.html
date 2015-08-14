@@ -18,14 +18,14 @@
     </head>
     
     <body>
-        <section id="container">
-            <h1 id="title">Помидорковый таймер</h1>
+        <section id="pomidorka">
+            <h1 class="pa-title">Помидорковый таймер</h1>
             
-            <button id="settings">Настройки</button>
+            <button class="pa-settings-button">Настройки</button>
             
             <!-- Сам таймер -->
             <div id="timer">
-                <div id="timer-time">00:00</div>
+                <div id="timer-time">00<span class="colon">:</span>00</div>
                 
                 <div id="timer-scale">
                     <div class="timer-wrapper">
@@ -55,7 +55,11 @@
                 </button>
                 
                 <p class="subtitle">Помогает концентрироваться на работе<br/>из соседней вкладки</p>
-                <p class="credits">Разработка — Евгений<br/>Дизайн — Паша Омелёхин</p>
+                <p class="credits">
+                    Разработка — Евгений <br/>
+                    Дизайн — 
+                    <a href=" http://omelekhin.ru/">Паша Омелёхин</a>
+                </p>
                 
                 <!-- Тут будет блок с донатам -->
                 <div class="donate">
@@ -66,11 +70,11 @@
             </div>
             
             <!-- Настройки -->
-            <div class="hidden settings">
+            <div class="hidden pa-settings">
                 <ul>
                     <li class="clearfix">
                         Время работы
-                        <div class="ui-control">
+                        <div class="pa-control">
                             <i class="fa fa-minus"></i>
                             <span>
                                 <input class="time" type="text" maxlength="2"> мин
@@ -81,7 +85,7 @@
                     
                     <li class="clearfix">
                         Маленький перерыв
-                        <div class="ui-control">
+                        <div class="pa-control">
                             <i class="fa fa-minus"></i>
                             <span>
                                 <input class="shortBreak" type="text" maxlength="2"> мин
@@ -92,7 +96,7 @@
                     
                     <li class="clearfix">
                         Большой перерыв
-                        <div class="ui-control">
+                        <div class="pa-control">
                             <i class="fa fa-minus"></i>
                             <span>
                                 <input class="longBreak" type="text" maxlength="2"> мин
@@ -103,7 +107,7 @@
                     
                     <li class="clearfix separator">
                         Помидорок в раунде
-                        <div class="ui-control ui-full-control">
+                        <div class="pa-control pa-full-control">
                             <i class="fa fa-minus"></i>
                             <span>
                                 <input class="round" type="text" maxlength="2">
@@ -114,7 +118,7 @@
                     
                     <li class="clearfix">
                         Помидорок за день
-                        <div class="ui-control ui-full-control">
+                        <div class="pa-control pa-full-control">
                             <i class="fa fa-minus"></i>
                             <span>
                                 <input class="total" type="text" maxlength="2">
@@ -129,7 +133,7 @@
         <script src="js/main.js" 
                 type="text/javascript"></script>
         <script type="text/javascript">
-            App.initiate(document.getElementById('container'));
+            App.initiate(document.getElementById('pomidorka'));
         </script>
     </body>
 </html>
