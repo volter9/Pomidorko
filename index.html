@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta charset="utf8"/>
-        <title>Помидорковый Таймер</title>
+        <title>помидорковый таймер</title>
         
         <link href="css/styles.css"
               rel="stylesheet"
@@ -26,7 +26,9 @@
             
             <button class="pa-settings-button">Настройки</button>
             
-            <button class="pa-recess hidden">Пропустить перерыв</button>
+            <button class="pa-recess">
+                <span>Пропустить помидорку</span>
+            </button>
             
             <!-- Сам таймер -->
             <div id="timer">
@@ -54,7 +56,7 @@
             <button id="about">О проекте</button>
             
             <!-- О проекте -->
-            <div class="overlay hidden about">
+            <div class="about hidden">
                 <button class="close">
                     <img src="img/close.png"/>
                 </button>
@@ -68,7 +70,12 @@
                 
                 <!-- Тут будет блок с донатам -->
                 <div class="donate">
-                    <h2>Поддержать проект</h2>
+                    <p class="we-need">
+                        <span class="support">Поддержать проект</span><br/>
+                        Нам нужно 100 $ на сертификат разработчика АйОС,<br>
+                        чтобы вы смогли пользоваться удобным и бесплатным<br>
+                        помидорковым таймером на айфоне
+                    </p>
                     
                     <iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/shop.xml?account=41001865839740&quickpay=shop&payment-type-choice=on&writer=seller&targets=%D0%9D%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5+%D1%82%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D0%B0&default-sum=100&button-text=03&comment=on&hint=%D0%9B%D1%8E%D0%B1%D0%B0%D1%8F+%D0%B5%D1%80%D1%83%D0%BD%D0%B4%D0%B0&successURL=" width="450" height="272"></iframe>
                 </div>
@@ -80,55 +87,55 @@
                     <li class="clearfix">
                         Время работы
                         <div class="pa-control">
-                            <i class="fa fa-minus"></i>
-                            <span>
+                            <span class="minus">-</span>
+                            <span class="pa-cell">
                                 <input class="time" type="text" maxlength="2"> мин
                             </span>
-                            <i class="fa fa-plus"></i>
+                            <span class="plus">+</span>
                         </div>
                     </li>
                     
                     <li class="clearfix">
                         Маленький перерыв
                         <div class="pa-control">
-                            <i class="fa fa-minus"></i>
-                            <span>
+                            <span class="minus">-</span>
+                            <span class="pa-cell">
                                 <input class="shortBreak" type="text" maxlength="2"> мин
                             </span>
-                            <i class="fa fa-plus"></i>
+                            <span class="plus">+</span>
                         </div>
                     </li>
                     
                     <li class="clearfix">
                         Большой перерыв
                         <div class="pa-control">
-                            <i class="fa fa-minus"></i>
-                            <span>
+                            <span class="minus">-</span>
+                            <span class="pa-cell">
                                 <input class="longBreak" type="text" maxlength="2"> мин
                             </span>
-                            <i class="fa fa-plus"></i>
+                            <span class="plus">+</span>
                         </div>
                     </li>
                     
                     <li class="clearfix separator">
                         Помидорок в раунде
                         <div class="pa-control pa-full-control">
-                            <i class="fa fa-minus"></i>
-                            <span>
+                            <span class="minus">-</span>
+                            <span class="pa-cell">
                                 <input class="round" type="text" maxlength="2">
                             </span>
-                            <i class="fa fa-plus"></i>
+                            <span class="plus">+</span>
                         </div>
                     </li>
                     
                     <li class="clearfix">
                         Помидорок за день
                         <div class="pa-control pa-full-control">
-                            <i class="fa fa-minus"></i>
-                            <span>
+                            <span class="minus">-</span>
+                            <span class="pa-cell">
                                 <input class="total" type="text" maxlength="2">
                             </span>
-                            <i class="fa fa-plus"></i>
+                            <span class="plus">+</span>
                         </div>
                     </li>
                 </ul>

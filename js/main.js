@@ -5,11 +5,11 @@ e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined
 if(!a&&h)return h(r,!0)
 if(o)return o(r,!0)
 var c=new Error("Cannot find module '"+r+"'")
-throw c.code="MODULE_NOT_FOUND",c}var l=i[r]={exports:{}}
-e[r][0].call(l.exports,function(t){var i=e[r][1][t]
-return s(i?i:t)},l,l.exports,t,e,i,n)}return i[r].exports}for(var o="function"==typeof require&&require,r=0;r<n.length;r++)s(n[r])
+throw c.code="MODULE_NOT_FOUND",c}var u=i[r]={exports:{}}
+e[r][0].call(u.exports,function(t){var i=e[r][1][t]
+return s(i?i:t)},u,u.exports,t,e,i,n)}return i[r].exports}for(var o="function"==typeof require&&require,r=0;r<n.length;r++)s(n[r])
 return s}({1:[function(t,e,i){var n=t("./views/app"),s=t("./models/settings"),o=t("./models/goals"),r=t("./ls"),a=function(t){this.settings=s.get(),this.goals=o.get(),this.view=new n(t,{settings:this.settings,goals:this.goals}),this.initialize(this.settings,this.goals)}
-a.prototype.initialize=function(t,e){e.emit("change"),t.emit("change"),e.on("change",function(){r.save(e)}),t.on("change",function(){r.save(t)})},a.initiate=function(t){a.instance=new a(t)},e.exports=a},{"./ls":6,"./models/goals":7,"./models/settings":8,"./views/app":15}],2:[function(t,e,i){var n=t("./utils")
+a.prototype.initialize=function(t,e){e.emit("change"),t.emit("change"),e.on("change",function(){r.save(e)}),t.on("change",function(){r.save(t)})},e.exports={initiate:function(t){this.instance=new a(t)}}},{"./ls":6,"./models/goals":7,"./models/settings":8,"./views/app":15}],2:[function(t,e,i){var n=t("./utils")
 e.exports=function(t){t.on=function(t,e){this._events||(this._events={}),this._events[t]||(this._events[t]=[]),this._events[t].push(e)},t.emit=function(t){if(this._events&&this._events[t]){var e=n.toArray(arguments).slice(1)
 this._events[t].forEach(function(t){t&&t.apply(t,e)})}}}},{"./utils":5}],3:[function(t,e,i){var n=function(t,e,i){return t=Math.min(i,t),Math.max(e,t)}
 e.exports={clamp:n}},{}],4:[function(t,e,i){var n=function(t){return t=t||(t=0),function(){return++t}}
@@ -49,11 +49,8 @@ var t=this.data.settings,e=this.node.querySelectorAll(".pa-control")
 o.toArray(e).forEach(function(e){new s(e,{settings:t})})},toggle:function(){var t=this.node.classList.contains("hidden")
 this.node.classList.toggle("hidden"),this.node.classList.toggle("pa-settings-appear",t),this.node.classList.toggle("pa-settings-disappear",!t)},render:function(){var t=this,e=this.data.settings.all()
 o.each(e,function(e,i){t.find("input."+i).value=e})}})
-e.exports=r},{"../helpers/utils":5,"../mvc/view":12,"./ui-control":19}],18:[function(t,e,i){var n=t("../mvc/view"),s=(t("../mvc/model"),t("../timer")),o=function(t,e){return e.substr(t.length)+t},r=n.extend({initialize:function(){var t=this
-this.settings=this.data.settings,this.recess=this.data.recess,this.goals=this.data.goals,this.label=this.find("#timer-time"),this.scale=this.find(".timer-wrapper"),this.timer=new s(this),this.setupEvents(),this.render(60*this.settings.get("time")),this.recess.addEventListener("click",function(){t.goals.get("recess")===!0&&t.timer.stop()}),this.timer.on("start",this.toggleRecess.bind(this)),this.toggleRecess()},toggleRecess:function(){this.recess.classList.toggle("hidden",!this.goals.get("recess"))},setupEvents:function(){this.bind("#timer-control","click",this.button),this.timer.on("stop",this.stop.bind(this))
-var t=this.settings,e=this.timer,i=this
-t.on("change",function(){if(!e.isTimeRemained()&&!e.isRunning()){var t=i.goals.get("current"),n=i.goals.get("recess"),s=i.getTime(t,n)
-i.render(60*s)}})},stop:function(){this.toggle(!0),this.render(0),this.next()},next:function(){var t=!this.goals.get("recess"),e=!t+this.goals.get("current"),i=e>this.settings.get("total")
+e.exports=r},{"../helpers/utils":5,"../mvc/view":12,"./ui-control":19}],18:[function(t,e,i){var n=t("../mvc/view"),s=(t("../mvc/model"),t("../timer")),o=function(t,e){return e.substr(t.length)+t},r=n.extend({initialize:function(){this.settings=this.data.settings,this.recess=this.data.recess,this.goals=this.data.goals,this.label=this.find("#timer-time"),this.scale=this.find(".timer-wrapper"),this.timer=new s(this),this.setupEvents(),this.render(60*this.settings.get("time"))},setupEvents:function(){var t=this.settings,e=this.timer,i=this
+this.bind("#timer-control","click",this.button),this.timer.on("stop",this.stop.bind(this)),this.recess.addEventListener("click",function(){i.timer.stop()}),t.on("change",function(){e.isTimeRemained()||e.isRunning()||i.render(60*i.getTime())})},stop:function(){this.toggle(!0),this.render(0),this.next()},next:function(){var t=!this.goals.get("recess"),e=!t+this.goals.get("current"),i=e>this.settings.get("total")
 this.goals.merge({recess:t,current:i?1:e}),i?this.render(60*this.getTime()):this.startOver(e,t)},getTime:function(t,e){t=t||this.goals.get("current"),e=e||this.goals.get("recess")
 var i=e?this.settings.get("shortBreak"):this.settings.get("time")
 return e&&t%this.settings.get("round")===0&&(i=this.settings.get("longBreak")),i},startOver:function(t,e){this.toggle(!1),this.timer.start(60*this.getTime(t,e))},render:function(t){var e=Math.floor(t/60).toString(),i=Math.floor(t%60).toString()
@@ -62,7 +59,7 @@ this.scale.style.marginLeft=-i+"px"},setTime:function(t,e){t=o(t,"00"),e=o(e,"00
 this.toggle(t),t?this.timer.pause():this.timer.start(60*this.getTime())},toggle:function(t){var e=this.find(".icon")
 e.classList.toggle("pause",!t),e.classList.toggle("play",t),this.find("#timer-control").classList.toggle("play",t)}})
 e.exports=r},{"../mvc/model":11,"../mvc/view":12,"../timer":13}],19:[function(t,e,i){var n=t("../mvc/view"),s=n.extend({initialize:function(){var t=this.data.settings,e=this.find("input")
-this.input=e,this.bind(".fa-plus","click",this.add),this.bind(".fa-minus","click",this.sub),this.bind("input","change",function(){var i=parseInt(e.value)
+this.input=e,this.bind(".plus","click",this.add),this.bind(".minus","click",this.sub),this.bind("input","change",function(){var i=parseInt(e.value)
 t.set(e.className,Math.round(i))})},add:function(t){this.perform(t,1)},sub:function(t){this.perform(t,-1)},perform:function(t,e){t.preventDefault()
 var i=parseInt(this.input.value)+e,t=document.createEvent("HTMLEvents")
 t.initEvent("change",null,!1),this.input.value=isNaN(i)?0:i,this.input.dispatchEvent(t)}})
