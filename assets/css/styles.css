@@ -54,7 +54,7 @@ button {
     min-width:  1024px;
 }
 
-.pa-recess {
+.pa-skip {
     background-color: transparent;
     border: 0px;
     color: #fff;
@@ -71,7 +71,7 @@ button {
     width: 180px;
 }
 
-.pa-recess span {
+.pa-skip span {
     border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
     cursor: pointer;
     
@@ -79,7 +79,7 @@ button {
     padding-bottom: 2px;
 }
 
-.pa-recess span:hover {
+.pa-skip span:hover {
     border-bottom: 1px dotted rgba(255, 255, 255, 0.9);
 }
 
@@ -112,8 +112,8 @@ button {
     z-index: 9000;
 }
 
-#goals,
-#about {
+.pa-goals,
+.pa-about-button {
     color: #fff;
     font-size: 14px;
     line-height: 100%;
@@ -124,19 +124,19 @@ button {
     padding-bottom: 1px;
 }
 
-#goals {
+.pa-goals {
     left: 30px;
 }
 
-#goals .current {
+.pa-goals .pa-current {
     font-size: 2em;
 }
 
-#goals .status {
+.pa-goals .pa-status {
     font-style: italic;
 }
 
-#about {
+.pa-about-button {
     background-color: transparent;
     border: 0px;
     border-bottom: 1px solid rgba(255, 255, 255 ,0.2);
@@ -145,7 +145,7 @@ button {
     z-index: 9002;
 }
 
-#about:hover {
+.pa-about-button:hover {
     border-bottom: 1px solid rgba(255, 255, 255 ,0.6);
 }
 
@@ -153,7 +153,7 @@ button {
  * Timer itself
  */
 
-#timer {
+.pa-timer {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -166,27 +166,27 @@ button {
     text-align: center;
 }
 
-#timer-time {
+.pa-timer-time {
     font-family: 'Lato', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
     font-size: 6em;
     font-weight: 200;
 }
 
-#timer-time .colon {
+.pa-timer-time .pa-colon {
     position: relative;
     top: -10px;
 }
 
-#timer-scale {
+.pa-timer-scale {
     margin-top: 3.5em;
     margin-left: calc(50% - 11px);
 }
 
-.timer-wrapper {
+.pa-timer-wrapper {
     width: 3300px;
 }
 
-#timer-control {
+.pa-timer-control {
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -208,7 +208,7 @@ button {
     width: 140px;
 }
 
-#timer-control span {
+.pa-timer-control span {
     background-position: center center;
     background-repeat: no-repeat;
     
@@ -218,15 +218,15 @@ button {
     width: 64px;
 }
 
-#timer-control .play {
+.pa-timer-control .pa-play {
     background-image: url('../img/play.png');
 }
 
-#timer-control .pause {
+.pa-timer-control .pa-pause {
     background-image: url('../img/pause.png');
 }
 
-#timer-control.play {
+.pa-timer-control.play {
     padding-left: 10px;
 }
 
@@ -238,7 +238,7 @@ button {
     background-color: #15B5D1;
 }
 
-.resting #timer-control {
+.resting .pa-timer-control {
     background-color: #68C4DB;
 }
 
@@ -266,7 +266,7 @@ button {
     to   { transform: translateY(100%); }
 }
 
-.about {
+.pa-about {
     background-color: #4ABC84;
     
     position: absolute;
@@ -280,12 +280,28 @@ button {
     padding-top: 5em;
 }
 
-.about .support {
+.pa-about p {
+    font-size: 13px;
+    line-height: 1.275em;
+}
+
+.pa-about a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    text-decoration: none;
+}
+
+.pa-about a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+
+.pa-about .pa-support {
     font-size: 15px;
     font-weight: bold;
 }
 
-.about .close {
+.pa-about .pa-close {
     background-color: transparent;
     border: 0px;
     color: #fff;
@@ -298,62 +314,47 @@ button {
     padding: 0.8em 0px;
 }
 
-.about p {
-    font-size: 13px;
-    line-height: 1.275em;
-}
-
-.about a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-    text-decoration: none;
-}
-
-.about a:hover {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-}
-
-.about .subtitle {
+.pa-about .pa-subtitle {
     font-size: 14px; 
     line-height: 1.25em; 
     
     margin-bottom: 1.2em;
 }
 
-.about .credits {
-    font-size: 13px; 
-}
-
-.about .we-need {
-    font-size: 13px;
-}
-
-.about .donate {
+.pa-about .pa-donate {
     position: absolute;
     bottom: 30px;
     left: 30px;
 }
 
-.about .donate iframe {
+.pa-about .pa-credits {
+    font-size: 13px; 
+}
+
+.pa-about .pa-we-need {
+    font-size: 13px;
+}
+
+.pa-about .pa-donate iframe {
     position: relative;
     left: -8px;
     
     margin-top: 1em;
 }
 
-.about.hidden {
+.pa-about.hidden {
     display: block;
     
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
 }
 
-.about-appear {
+.pa-about-appear {
     animation: show-about 0.4s;
     -webkit-animation: show-about 0.4s;
 }
 
-.about-disappear {
+.pa-about-disappear {
     animation: hide-about 0.4s;
     -webkit-animation: hide-about 0.4s;
 }

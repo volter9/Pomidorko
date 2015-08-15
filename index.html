@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="utf8"/>
-        <title>помидорковый таймер</title>
+        <title>Помидорковый таймер</title>
         
         <link href="assets/css/styles.css"
               rel="stylesheet"
@@ -21,51 +21,54 @@
             
             <button class="pa-settings-button">Настройки</button>
             
-            <div class="pa-recess">
+            <div class="pa-skip">
                 <span>Пропустить помидорку</span>
             </div>
             
             <!-- Сам таймер -->
-            <div id="timer">
-                <div id="timer-time">00<span class="colon">:</span>00</div>
+            <div class="pa-timer">
+                <div class="pa-timer-time">
+                    00<span class="pa-colon">:</span>00
+                </div>
                 
-                <div id="timer-scale">
-                    <div class="timer-wrapper">
+                <div class="pa-timer-scale">
+                    <div class="pa-timer-wrapper">
                         <img src="assets/img/scale.png" alt="scale"/>
                     </div>
                 </div>
                 
-                <div class="play" id="timer-control">
-                    <span class="icon play"></i>
+                <div class="pa-timer-control pa-play">
+                    <span class="pa-icon pa-play"></i>
                 </div>
             </div>
                 
             </div>
             
-            <div id="goals">
-                <span class="current">4</span> из 
-                <span class="total">12</span> отработанных помидорок
-                <span class="hidden status">&mdash; Лох</span>
+            <div class="pa-goals">
+                <span class="pa-current">4</span> из 
+                <span class="pa-total">12</span> отработанных помидорок
+                <span class="pa-status hidden"></span>
             </div>
             
-            <button id="about">О проекте</button>
+            <button class="pa-about-button">О проекте</button>
             
             <!-- О проекте -->
-            <div class="about hidden">
-                <button class="close">
+            <div class="pa-about hidden">
+                <button class="pa-close">
                     <img src="assets/img/close.png"/>
                 </button>
                 
-                <p class="subtitle">Помогает концентрироваться на работе<br/>из соседней вкладки</p>
-                <p class="credits">
-                    Разработка — Евгений <br/>
+                <p class="pa-subtitle">Помогает концентрироваться на работе<br/>из соседней вкладки</p>
+                <p class="pa-credits">
+                    Разработка — 
+                    <a href="https://github.com/Volter9/" target="_blank">Евгений Стеблинский</a><br/>
                     Дизайн — 
-                    <a href=" http://omelekhin.ru/" target="_blank">Паша Омелёхин</a>
+                    <a href="http://omelekhin.ru/" target="_blank">Паша Омелёхин</a>
                 </p>
                 
                 <!-- Тут будет блок с донатам -->
-                <div class="donate">
-                    <p class="we-need">
+                <div class="pa-donate">
+                    <p class="pa-we-need">
                         <span class="support">Поддержать проект</span><br/>
                         Нам нужно 100 $ на сертификат разработчика АйОС,<br>
                         чтобы вы смогли пользоваться удобным и бесплатным<br>
