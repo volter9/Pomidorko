@@ -15,6 +15,7 @@ body {
 
 button {
     cursor: pointer;
+    outline: none;
 }
 
 .resting {
@@ -168,8 +169,12 @@ button {
 
 .pa-timer-time {
     font-family: 'Lato', 'Helvetica Neue', 'Segoe UI', Arial, sans-serif;
-    font-size: 6em;
+    font-size: 0px;
     font-weight: 200;
+}
+
+.pa-timer-time span {
+    font-size: 96px;
 }
 
 .pa-timer-time .pa-colon {
@@ -226,7 +231,7 @@ button {
     background-image: url('../img/pause.png');
 }
 
-.pa-timer-control.play {
+.pa-timer-control.pa-play {
     padding-left: 10px;
 }
 

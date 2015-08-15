@@ -1,10 +1,7 @@
-<!--
-    - Починка ':00 -> ':59 задержку
--->
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf8"/>
+        <meta charset="utf-8"/>
         <title>Помидорковый таймер</title>
         
         <link href="assets/css/styles.css"
@@ -28,7 +25,9 @@
             <!-- Сам таймер -->
             <div class="pa-timer">
                 <div class="pa-timer-time">
-                    00<span class="pa-colon">:</span>00
+                    <span class="pa-min">00</span>
+                    <span class="pa-colon">:</span>
+                    <span class="pa-sec">00</span>
                 </div>
                 
                 <div class="pa-timer-scale">
@@ -69,7 +68,7 @@
                 <!-- Тут будет блок с донатам -->
                 <div class="pa-donate">
                     <p class="pa-we-need">
-                        <span class="support">Поддержать проект</span><br/>
+                        <span class="pa-support">Поддержать проект</span><br/>
                         Нам нужно 100 $ на сертификат разработчика АйОС,<br>
                         чтобы вы смогли пользоваться удобным и бесплатным<br>
                         помидорковым таймером на айфоне
