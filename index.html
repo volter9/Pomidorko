@@ -1,8 +1,5 @@
 <!--
-    - Замена заголовка
-    - Замена favicon
     - Починка ':00 -> ':59 задержку
-    - Поднять двоеточие во времени на 6 пикс.
 -->
 <!DOCTYPE html>
 <html>
@@ -10,13 +7,11 @@
         <meta charset="utf8"/>
         <title>помидорковый таймер</title>
         
-        <link href="css/styles.css"
+        <link href="assets/css/styles.css"
               rel="stylesheet"
               type="text/css"/>
-        <link rel="stylesheet"
-              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
         <link rel="icon" 
-              href="img/work.ico" 
+              href="assets/img/work.ico" 
               type="image/x-icon"/>
     </head>
     
@@ -26,9 +21,9 @@
             
             <button class="pa-settings-button">Настройки</button>
             
-            <button class="pa-recess">
+            <div class="pa-recess">
                 <span>Пропустить помидорку</span>
-            </button>
+            </div>
             
             <!-- Сам таймер -->
             <div id="timer">
@@ -36,7 +31,7 @@
                 
                 <div id="timer-scale">
                     <div class="timer-wrapper">
-                        <img src="img/scale.png" alt="scale"/>
+                        <img src="assets/img/scale.png" alt="scale"/>
                     </div>
                 </div>
                 
@@ -58,7 +53,7 @@
             <!-- О проекте -->
             <div class="about hidden">
                 <button class="close">
-                    <img src="img/close.png"/>
+                    <img src="assets/img/close.png"/>
                 </button>
                 
                 <p class="subtitle">Помогает концентрироваться на работе<br/>из соседней вкладки</p>
@@ -87,7 +82,7 @@
                     <li class="clearfix">
                         Время работы
                         <div class="pa-control">
-                            <span class="minus">-</span>
+                            <span class="minus">&minus;</span>
                             <span class="pa-cell">
                                 <input class="time" type="text" maxlength="2"> мин
                             </span>
@@ -98,7 +93,7 @@
                     <li class="clearfix">
                         Маленький перерыв
                         <div class="pa-control">
-                            <span class="minus">-</span>
+                            <span class="minus">&minus;</span>
                             <span class="pa-cell">
                                 <input class="shortBreak" type="text" maxlength="2"> мин
                             </span>
@@ -109,7 +104,7 @@
                     <li class="clearfix">
                         Большой перерыв
                         <div class="pa-control">
-                            <span class="minus">-</span>
+                            <span class="minus">&minus;</span>
                             <span class="pa-cell">
                                 <input class="longBreak" type="text" maxlength="2"> мин
                             </span>
@@ -120,7 +115,7 @@
                     <li class="clearfix separator">
                         Помидорок в раунде
                         <div class="pa-control pa-full-control">
-                            <span class="minus">-</span>
+                            <span class="minus">&minus;</span>
                             <span class="pa-cell">
                                 <input class="round" type="text" maxlength="2">
                             </span>
@@ -131,7 +126,7 @@
                     <li class="clearfix">
                         Помидорок за день
                         <div class="pa-control pa-full-control">
-                            <span class="minus">-</span>
+                            <span class="minus">&minus;</span>
                             <span class="pa-cell">
                                 <input class="total" type="text" maxlength="2">
                             </span>
@@ -142,7 +137,7 @@
             </div>
         </section>
         
-        <script src="js/main.js" 
+        <script src="assets/js/main.js" 
                 type="text/javascript"></script>
         <script type="text/javascript">
             App.initiate(document.getElementById('pomidorka'));
