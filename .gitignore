@@ -1,5 +1,7 @@
 # Mac OS X stuff
 .DS_Store
 
+# Some stuff to ignore
 build.zip
 assets/img/old_scale.png
+assets/js/likely-no-jquery.js

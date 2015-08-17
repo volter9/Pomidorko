@@ -331,7 +331,8 @@ iframe {
 }
 
 .pa-about .pa-credits {
-    font-size: 13px; 
+    font-size: 13px;
+    margin-bottom: 1.2em;
 }
 
 .pa-about .pa-donate {
