@@ -57,7 +57,7 @@ iframe {
     
     height: 100%;
     /* Fuck small screens! */
-    min-height: 768px;
+    min-height: 640px;
     min-width:  1024px;
 }
 
@@ -279,6 +279,7 @@ iframe {
 
 .pa-about {
     background-color: #4ABC84;
+    overflow: hidden;
     
     position: absolute;
     top: 0px;
@@ -486,4 +487,16 @@ iframe {
 .pa-settings-disappear {
     animation: hide-settings 0.4s;
     -webkit-animation: hide-settings 0.4s;
+}
+
+@media (max-height: 768px) {
+    .pa-timer {
+        top: 48%;
+        
+        height: 69%;
+    }
+    
+    .pa-timer-scale {
+        margin-top: 2.5em;
+    }
 }
