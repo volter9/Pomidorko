@@ -220,7 +220,7 @@ iframe {
 }
 
 .pa-timer-control span {
-    background-position: center center;
+    background-image: url('../img/play-pause.png');
     background-repeat: no-repeat;
     
     display: inline-block;
@@ -230,11 +230,11 @@ iframe {
 }
 
 .pa-timer-control .pa-play {
-    background-image: url('../img/play.png');
+    background-position: 0px 0px;
 }
 
 .pa-timer-control .pa-pause {
-    background-image: url('../img/pause.png');
+    background-position: -64px 0px;
 }
 
 .pa-timer-control.pa-play {
@@ -378,13 +378,13 @@ iframe {
 
 .pa-settings {
     background-color: #EE4E5E;
-	box-shadow: 0 0 16px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 16px -1px rgba(0, 0, 0, 0.1);
     
     position: absolute;
     top: 0px;
     bottom: 0px;
     right: 0px;
- 
+    
     width: 32%;
     min-width: 380px;
     z-index: 8999;
@@ -401,10 +401,10 @@ iframe {
 }
 
 .pa-settings ul {
-	border-top: 1px solid rgba(255,255,255,.2);
+    border-top: 1px solid rgba(255,255,255,.2);
     list-style: none;
-	
-	padding: 2.5em 32px 0px 40px;
+    
+    padding: 2.5em 32px 0px 40px;
 }
 
 .pa-settings ul li {
@@ -449,8 +449,12 @@ iframe {
     width: 28px;
 }
 
-.pa-settings .pa-full-control input {
+.pa-settings .pa-full-control .pa-cell {
     width: 66px;
+}
+
+.pa-settings .pa-full-control input {
+    width: 100%;
 }
 
 .pa-settings .separator {
