@@ -198,17 +198,17 @@ iframe {
 }
 
 .pa-timer-control {
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    
     background-color: #EB6169;
     border-radius: 100%;
     cursor: pointer;
     font-size: 4em;
     line-height: 160px;
     text-align: center;
+    
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -223,8 +223,8 @@ iframe {
     background-position: center center;
     background-repeat: no-repeat;
     
-    margin: 0px auto;
     display: inline-block;
+    margin: 0px auto;
     height: 64px;
     width: 64px;
 }
@@ -328,11 +328,13 @@ iframe {
 .pa-about .pa-subtitle {
     font-size: 14px; 
     line-height: 1.25em; 
+    
     margin-bottom: 1.2em;
 }
 
 .pa-about .pa-credits {
     font-size: 13px;
+    
     margin-bottom: 1.2em;
 }
 
@@ -354,10 +356,10 @@ iframe {
 }
 
 .pa-about.hidden {
-    display: block;
-    
     transform: translateY(100%);
     -webkit-transform: translateY(100%);
+    
+    display: block;
 }
 
 .pa-about-appear {
@@ -399,23 +401,26 @@ iframe {
 }
 
 .pa-settings ul {
-    list-style: none;
-    padding: 2em 40px 0;
 	border-top: 1px solid rgba(255,255,255,.2);
+    list-style: none;
+	
+	padding: 2.5em 32px 0px 40px;
 }
 
 .pa-settings ul li {
     line-height: 34px;
+    
     margin-bottom: 1em;
 }
 
 .pa-settings .pa-control {
     line-height: 150%;
-    float: right;
     
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+    
+    float: right;
 }
 
 .pa-settings-button .pa-control .fa {
@@ -445,7 +450,7 @@ iframe {
 }
 
 .pa-settings .pa-full-control input {
-    width: 100%;
+    width: 66px;
 }
 
 .pa-settings .separator {
