@@ -58,7 +58,7 @@ iframe {
     height: 100%;
     /* Fuck small screens! */
     min-height: 640px;
-    min-width:  1024px;
+    min-width:  640px;
 }
 
 .pa-skip {
@@ -101,7 +101,7 @@ iframe {
 }
 
 .pa-title {
-    left: 30px;
+    left: 38px;
     z-index: 9003;
     
     padding-left: 0px;
@@ -115,7 +115,7 @@ iframe {
     color: #fff;
     line-height: 110%;
     
-    right: 30px;
+    right: 38px;
     z-index: 9000;
 }
 
@@ -132,7 +132,7 @@ iframe {
 }
 
 .pa-goals {
-    left: 30px;
+    left: 38px;
 }
 
 .pa-goals .pa-current {
@@ -148,7 +148,7 @@ iframe {
     border: 0px;
     border-bottom: 1px solid rgba(255, 255, 255 ,0.2);
     
-    right: 30px;
+    right: 38px;
     z-index: 9002;
 }
 
@@ -288,7 +288,7 @@ iframe {
     right: 0px;
     z-index: 9001;
     
-    padding: 10px 30px;
+    padding: 10px 38px;
     padding-top: 5em;
 }
 
@@ -320,7 +320,7 @@ iframe {
     
     position: absolute;
     top: 10px;
-    right: 30px;
+    right: 38px;
     
     padding: 0.8em 0px;
 }
@@ -341,7 +341,7 @@ iframe {
 .pa-about .pa-donate {
     position: absolute;
     bottom: 30px;
-    left: 30px;
+    left: 38px;
 }
 
 .pa-about .pa-we-need {
@@ -404,7 +404,7 @@ iframe {
     border-top: 1px solid rgba(255,255,255,.2);
     list-style: none;
     
-    padding: 2.5em 32px 0px 40px;
+    padding: 2.5em 40px 0px;
 }
 
 .pa-settings ul li {
