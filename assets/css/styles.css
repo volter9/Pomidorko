@@ -137,6 +137,8 @@ iframe {
 
 .pa-goals .pa-current {
     font-size: 2em;
+    
+    margin-right: .1em;
 }
 
 .pa-goals .pa-status {
@@ -352,7 +354,7 @@ iframe {
     position: relative;
     left: -8px;
     
-    margin-top: 1em;
+    margin-top: 0.5em;
 }
 
 .pa-about.hidden {
@@ -496,6 +498,19 @@ iframe {
 .pa-settings-disappear {
     animation: hide-settings 0.4s;
     -webkit-animation: hide-settings 0.4s;
+}
+
+.likely-light .likely__widget {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+ 
+    height: auto !important;
+    padding: 1px 3px;
+}
+
+#paypal {
+    margin-top: 0.5em;
+    margin-left: -8px;
 }
 
 @media (max-height: 768px) {
