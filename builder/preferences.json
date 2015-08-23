@@ -1,0 +1,33 @@
+{
+    "time": {
+        "type": "time"
+    },
+    
+    "shortBreak": {
+        "type": "time"
+    },
+    
+    "longBreak": {
+        "type": "time"
+    },
+    
+    "round": {
+        "type": "input",
+        "full": true,
+        "separator": true
+    },
+    
+    "total": {
+        "type": "input",
+        "full": true
+    },
+    
+    "sound": {
+        "type": "bool",
+        "separator": true
+    },
+    
+    "tick": {
+        "type": "bool"
+    }
+}

@@ -9,5 +9,5 @@ if [ $# -ne 1 ]
 then
     minify --output assets/js/main.js assets/js/main.js
     
-    zip -r build.zip 'assets/' 'build/' -x *.DS_Store\*
+    zip -FSr build.zip 'assets/' 'build/' -x *.DS_Store\*
 fi

@@ -25,26 +25,13 @@
     },
     
     "preferences": {
-        "time": {
-            "caption": "Время работы",
-            "full": false
-        },
-        "shortBreak": {
-            "caption": "Маленький перерыв",
-            "full": false
-        },
-        "longBreak": {
-            "caption": "Большой перерыв",
-            "full": false
-        },
-        "round": {
-            "caption": "Помидорок в раунде",
-            "full": true
-        },
-        "total": {
-            "caption": "Помидорок за день",
-            "full": true
-        }
+        "time": "Время работы",
+        "shortBreak": "Маленький перерыв",
+        "longBreak": "Большой перерыв",
+        "round": "Помидорок в раунде",
+        "total": "Помидорок за день",
+        "sound": "Звуковое уведомление",
+        "tick": "Тиканье таймера"
     },
     
     "support": {

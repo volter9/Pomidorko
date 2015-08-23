@@ -425,10 +425,6 @@ iframe {
     float: right;
 }
 
-.pa-settings-button .pa-control .fa {
-    font-size: 14px;
-}
-
 .pa-settings .pa-cell {
     border: 1px solid rgba(255,255,255,.6);
     border-radius: 4px;
@@ -502,15 +498,19 @@ iframe {
 
 .likely-light .likely__widget {
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.125);
- 
-    height: auto !important;
+    height: 25px;
     padding: 1px 3px;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.15);
+    text-shadow: none;
+}
+
+.likely-light .likely__widget:hover {
+    box-shadow: none;
 }
 
 #paypal {
     margin-top: 0.5em;
-    margin-left: -8px;
+    margin-left: -6px;
 }
 
 @media (max-height: 768px) {

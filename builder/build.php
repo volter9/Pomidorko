@@ -3,7 +3,7 @@
 function render ($__view__, $__data__) {
     extract($__data__);
     
-    require($__view__);
+    require(__DIR__ . '/' . $__view__);
 }
 
 $files = glob('lang/*.json');
@@ -24,9 +24,11 @@ foreach ($files as $file) {
     $file = explode('.', $filename);
     $file = current($file);
     
+    $data['data'] = json_decode(file_get_contents(__DIR__ . '/preferences.json'), true);
+    
     ob_start();
     
-    render(__DIR__ . '/template.php', $data);
+    render('layout.php', $data);
     
     if (!file_exists("build/$file")) {
         mkdir("build/$file");
