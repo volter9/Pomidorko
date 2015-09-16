@@ -44,9 +44,8 @@ function json_file ($file) {
 }
 
 !file_exists('build') and mkdir('build');
-!file_exists('tests') and mkdir('tests');
 
-foreach (glob('lang/*.json') as $file) {
+foreach (glob(__DIR__ . '/lang/*.json') as $file) {
     $filename = str_replace(dirname($file), '', $file);
     $filename = ltrim($filename, '/');
     
@@ -59,11 +58,7 @@ foreach (glob('lang/*.json') as $file) {
         'production' => isset($_SERVER['argv'][1])
     ]);
     
-    $filepath = "build/$file/index.html";
-    
-    !file_exists("build/$file") and mkdir("build/$file");
+    $filepath = "build/$file.html";
     
     file_put_contents($filepath, capture('layout.php', $data));
-    
-    copy($filepath, "tests/$file.html");
 }
