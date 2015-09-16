@@ -20,9 +20,9 @@
 <?php render('views/settings.php', $__data__) ?> 
 <?php render('views/timer.php', $__data__) ?> 
 <?php render('views/goals.php', $__data__) ?> 
-<?php render('views/about.php', $__data__) ?>    
+<?php render('views/about.php', $__data__) ?> 
         </section>
 
-<?php render('views/footer.php', $__data__) ?> 
+<?php render('views/footer.php', $__data__) ?>  
     </body>
 </html>

@@ -1,31 +1,17 @@
 <div class="pa-settings hidden">
     <ul>
     <?php foreach ($preferences as $key => $caption): 
-        if (in_array($key, ['sound', 'tick'])) {
-            continue;
-        }
-        
         $item = $data[$key];
         $type = $item['type'];
         
-        $separator = !empty($item['separator']);
-        $full      = !empty($item['full']);
+        $item['name'] = $key;
         
-        $class  = 'pa-control';
-        $class .= $full ? ' pa-full-control' : '';
-        ?> 
-        <li class="clearfix<?php echo $separator ? ' separator' : '' ?>">
+        $separator = !empty($item['separator']);
+    ?> 
+        <li class="clearfix <?php echo $separator ? 'separator' : '' ?>">
             <?php echo $caption ?> 
-            <div class="<?php echo $class ?>" 
-                 data-type="<?php echo $type ?>">
-                <span class="minus">&minus;</span>
-                <span class="pa-cell">
-                    <input class="<?php echo $key ?>" type="text" maxlength="2">
-                    <?php echo $type === 'time' ? $min : '' ?> 
-                </span>
-                <span class="plus">+</span>
-            </div>
+            <?php render("views/fields/$type.php", array_merge($__data__, $item)) ?> 
         </li>
-    <?php endforeach ?> 
+    <?php endforeach; ?> 
     </ul>
 </div>

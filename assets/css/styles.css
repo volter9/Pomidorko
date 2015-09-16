@@ -415,7 +415,8 @@ iframe {
     margin-bottom: 1em;
 }
 
-.pa-settings .pa-control {
+.pa-settings .pa-control,
+.pa-settings .pa-bool {
     line-height: 150%;
     
     -moz-user-select: none;
@@ -423,6 +424,37 @@ iframe {
     -ms-user-select: none;
     
     float: right;
+}
+
+.pa-settings .pa-bool {
+    line-height: 120%;
+    
+    padding-top: 0.5em;
+}
+
+.pa-bool.pa-bool-on .pa-switch-on,
+.pa-bool.pa-bool-off .pa-switch-off {
+    font-weight: bold;
+}
+
+.pa-bool.pa-bool-off .pa-switch-on,
+.pa-bool.pa-bool-on .pa-switch-off {
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.9);
+}
+
+.pa-settings .pa-switch-on,
+.pa-settings .pa-switch-off {
+    cursor: pointer;
+    
+    display: inline-block;
+}
+
+.pa-settings .pa-switch-on {
+    margin-right: 12px;
+}
+
+.pa-settings .pa-switch-off {
+    margin-right: 26px;
 }
 
 .pa-settings .pa-cell {

@@ -5,5 +5,6 @@
 build.zip
 build/
 tests/
+release/
 
 original_index.html

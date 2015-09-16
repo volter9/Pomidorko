@@ -18,10 +18,10 @@
     ],
     
     "share": {
-        "vkontakte": "Share",
-        "twitter": "Tweet",
         "facebook": "Share",
-        "gplus": "Plus one"
+        "twitter": "Tweet",
+        "gplus": "Plus one",
+        "vkontakte": "Share"
     },
     
     "preferences": {

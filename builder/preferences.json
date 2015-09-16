@@ -2,31 +2,23 @@
     "time": {
         "type": "time"
     },
-    
     "shortBreak": {
         "type": "time"
     },
-    
     "longBreak": {
         "type": "time"
     },
-    
     "round": {
-        "type": "input",
-        "full": true,
+        "type": "number",
         "separator": true
     },
-    
     "total": {
-        "type": "input",
-        "full": true
+        "type": "number"
     },
-    
     "sound": {
         "type": "bool",
         "separator": true
     },
-    
     "tick": {
         "type": "bool"
     }
