@@ -7,7 +7,8 @@
     
     <div class="pa-timer-scale">
         <div class="pa-timer-wrapper">
-            <img src="assets/img/scale.png" alt="<?php echo $scale ?>">
+            <img srcset="assets/img/scale.png 1x, assets/img/scale@2x.png 2x"
+                 src="assets/img/scale.png" alt="<?php echo $scale ?>">
         </div>
     </div>
     

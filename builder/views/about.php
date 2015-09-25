@@ -1,6 +1,7 @@
 <div class="pa-about hidden">
     <button class="pa-close">
-        <img src="assets/img/close.png" 
+        <img srcset="assets/img/close.png 1x, assets/img/close@2x.png 2x"
+             src="assets/img/close.png" 
              alt="<?php echo $close ?>" 
              title="<?php echo $close ?>">
     </button>
