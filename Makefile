@@ -11,6 +11,7 @@ BUILD_FILES=build/*.html
 BUILDER=builder/build.php
 
 TEST_FOLDER=tests
+FTP=./deploy.sh
 
 # Tasks
 all: zip
@@ -61,3 +62,10 @@ release: build_templates_production minify_js
 # Clean build and tests files
 clean:
 	rm -rf ./release ./build ./tests
+	rm -f ./build.zip
+
+deploy_en: release
+	$(FTP) 'com' 'en'
+
+deploy_ru: release
+	$(FTP) 'ru' 'ru'
