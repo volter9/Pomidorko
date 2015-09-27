@@ -12,9 +12,12 @@ BUILDER=builder/build.php
 
 TEST_FOLDER=tests
 FTP=./deploy.sh
+FULL_DEPLOY=''
+
+.PHONY: build deploy
 
 # Tasks
-all: zip
+all: build
 
 # Compile templates via PHP
 build_templates:
@@ -30,9 +33,6 @@ build_js:
 minify_js: build_js
 	minify --output assets/js/main.js assets/js/main.js
 
-# Misc.
-.PHONY: echo
-
 # Build testing folder
 test: build_templates build_js
 	rm -rf $(TEST_FOLDER)
@@ -45,27 +45,24 @@ do                                              \
     cp $$FILE "$(TEST_FOLDER)/$${FILE#build/}"; \
 done
 
-# Build a release, zip it and remove the release folder
-zip: release
-	zip -FSr build.zip ./release -x *.DS_Store\*
-	
-	rm -rf ./release
+# Build a zip
+zip: build
+	zip -FSr build.zip ./build -x *.DS_Store\*
 
-# Prepare files for release
-release: build_templates_production minify_js
-	rm -rf ./release
-	
-	mkdir release
-	cp build/*.html release/
-	cp -r assets release
+# Prepare build files
+build: build_templates_production minify_js
+	cp -r assets build
 
 # Clean build and tests files
 clean:
-	rm -rf ./release ./build ./tests
+	rm -rf ./build ./tests
 	rm -f ./build.zip
 
-deploy_en: release
-	$(FTP) 'com' 'en'
+# Deploy files
+deploy_en: build
+	$(FTP) 'com' 'en' $(FULL_DEPLOY)
 
-deploy_ru: release
-	$(FTP) 'ru' 'ru'
+deploy_ru: build
+	$(FTP) 'ru' 'ru' $(FULL_DEPLOY)
+
+deploy: deploy_en deploy_ru
