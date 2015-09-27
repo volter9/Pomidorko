@@ -17,6 +17,9 @@
         "Every fourth break make the break longer, brain should recover itself."  
     ],
     
+    "on": "On",
+    "off": "Off",
+
     "share": {
         "facebook": "Share",
         "twitter": "Tweet",
@@ -31,7 +34,8 @@
         "round": "Pomodoros in the round",
         "total": "Pomodoros in the day",
         "sound": "Sound notification",
-        "tick": "Tick-tock"
+        "tick": "Tick-tock",
+        "notifications": "Notifications"
     },
     
     "support": {

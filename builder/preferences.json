@@ -21,5 +21,9 @@
     },
     "tick": {
         "type": "bool"
+    },
+    "notifications": {
+        "type": "bool",
+        "separator": true
     }
 }

@@ -555,6 +555,14 @@ iframe {
     .pa-timer-scale {
         margin-top: 2.5em;
     }
+
+    .pa-settings {
+        padding-top: 5em;
+    }
+
+    .pa-settings .separator {
+        margin-top: 2em;
+    }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
