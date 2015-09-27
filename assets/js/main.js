@@ -4,10 +4,10 @@ else{var e
 e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof self?self:this,e.App=t()}}(function(){return function t(e,i,n){function s(r,a){if(!i[r]){if(!e[r]){var h="function"==typeof require&&require
 if(!a&&h)return h(r,!0)
 if(o)return o(r,!0)
-var u=new Error("Cannot find module '"+r+"'")
-throw u.code="MODULE_NOT_FOUND",u}var c=i[r]={exports:{}}
-e[r][0].call(c.exports,function(t){var i=e[r][1][t]
-return s(i?i:t)},c,c.exports,t,e,i,n)}return i[r].exports}for(var o="function"==typeof require&&require,r=0;r<n.length;r++)s(n[r])
+var c=new Error("Cannot find module '"+r+"'")
+throw c.code="MODULE_NOT_FOUND",c}var u=i[r]={exports:{}}
+e[r][0].call(u.exports,function(t){var i=e[r][1][t]
+return s(i?i:t)},u,u.exports,t,e,i,n)}return i[r].exports}for(var o="function"==typeof require&&require,r=0;r<n.length;r++)s(n[r])
 return s}({1:[function(t,e,i){var n=t("./models/settings"),s=t("./models/goals"),o=t("./ls"),r=t("./views/app")
 config=t("./version"),lang=t("./helpers/language")
 var a=function(t,e){lang.set(e),this.resetIfNeeded(),this.settings=n.get(),this.goals=s.get(),this.view=new r(t,{settings:this.settings,goals:this.goals}),this.initialize(this.settings,this.goals)}
@@ -24,9 +24,9 @@ return i},o=function(t){var e={}
 return a(e,t)},r=function(t,e){var i,n={}
 for(i in t)n[i]=t[i]
 for(i in e)n[i]=e[i]
-return n},a=function(t,e){for(var i in e)t[i]=e[i]},h=function(t){return Array.prototype.slice.call(t)},u=function(t,e){var i={}
+return n},a=function(t,e){for(var i in e)t[i]=e[i]},h=function(t){return Array.prototype.slice.call(t)},c=function(t,e){var i={}
 return e.forEach(function(e){t[e]&&(i[e]=t[e])}),i}
-e.exports={toArray:h,extend:a,clone:o,merge:r,diff:s,each:n,pick:u}},{}],7:[function(t,e,i){var n=t("./mvc/mappers/ls"),s=t("./version")
+e.exports={toArray:h,extend:a,clone:o,merge:r,diff:s,each:n,pick:c}},{}],7:[function(t,e,i){var n=t("./mvc/mappers/ls"),s=t("./version")
 e.exports=new n({key:s.key})},{"./mvc/mappers/ls":12,"./version":17}],8:[function(t,e,i){var n=t("../ls"),s=t("../version")
 e.exports=function(t,e,i){return i=i||s.defaults[e],{get:function(){var i=new t
 return n.fetch(e,i),i.isNew()&&(i=this.bootstrap(n)),i},bootstrap:function(t){var e=this.blank()
@@ -47,12 +47,13 @@ n(s.prototype),s.prototype.start=function(t){this.timer||(t=this.remained?this.r
 return 0>t?(this.view.render(0),this.stop()):void this.view.render(t/1e3)},s.prototype.pause=function(){clearInterval(this.timer),this.timer=null,this.remained=this.endTime-Date.now(),this.startTime=this.endTime=null},s.prototype.stop=function(){this.remained=this.endTime=this.startTime=null,clearInterval(this.timer),this.timer=null,this.emit("stop")},s.prototype.isRunning=function(){return Boolean(this.timer)},s.prototype.getRemained=function(){return this.remained?this.remained:this.endTime-Date.now()},s.prototype.isTimeRemained=function(){return null!==this.remained},e.exports=s},{"./helpers/events":2}],17:[function(t,e,i){var n="0.1.0"
 e.exports={version:n,key:"pomidorka",defaults:{settings:{id:"settings",shortBreak:5,longBreak:20,time:25,version:n,round:4,total:12,sound:!0,tick:!1,notifications:!1},goals:{id:"goals",remained:!1,current:0,recess:!1,start:Date.now()}}}},{}],18:[function(t,e,i){var n=t("../mvc/view"),s=n.extend({initialize:function(){this.bind(".pa-close","click",this.toggle),this.data.button.addEventListener("click",this.toggle.bind(this))},toggle:function(){var t=this.node.classList.contains("hidden")
 this.node.classList.toggle("hidden"),this.node.classList.toggle("pa-about-appear",t),this.node.classList.toggle("pa-about-disappear",!t)}})
-e.exports=s},{"../mvc/view":14}],19:[function(t,e,i){var n=t("./settings"),s=t("./goals"),o=t("./about"),r=t("./timer"),a=t("../notify"),h=t("../mvc/view"),u=t("../helpers/language"),c=t("../helpers/utils")
+e.exports=s},{"../mvc/view":14}],19:[function(t,e,i){var n=t("./settings"),s=t("./goals"),o=t("./about"),r=t("./timer"),a=t("../notify"),h=t("../mvc/view"),c=t("../helpers/language"),u=t("../helpers/utils")
 e.exports=h.extend({initialize:function(){this.setupViews(),this.setupEvents(),this.update()},setupEvents:function(){var t=this,e=this.node,i=this.data.goals,n=this.data.settings,s=this.timer.timer,o=new Audio("assets/sounds/bell.mp3")
 window.addEventListener("keypress",function(e){var i="number"==typeof e.which?e.which:e.keyCode
 32===i&&(e.preventDefault(),t.timer.button())}),window.addEventListener("beforeunload",function(){var e=t.timer.timer.getRemained()
-e&&e>=0&&i.set("remained",e)}),i.on("change",function(){e.classList.toggle("resting",i.get("recess")),a.request()}),s.on("stop",function(){n.get("sound")&&o.play()}),s.on("start",this.update.bind(this))},setupViews:function(){this.timer=new r(this.find(".pa-timer"),c.merge(this.data,{recess:this.find(".pa-skip span")})),this.goals=new s(this.find(".pa-goals"),this.data),this.about=new o(this.find(".pa-about"),{button:this.find(".pa-about-button")}),this.settings=new n(this.find(".pa-settings"),{settings:this.data.settings,button:this.find(".pa-settings-button")})},update:function(){var t=this.data.goals.get("recess"),e=t?"assets/img/break.ico":"assets/img/work.ico"
-document.title=u.get(t?"recess":"work")+" — "+u.get("title","помидорковый таймер"),document.querySelector("link[rel=icon]").href=e,this.data.settings.get("notifications")===!0&&this.timer.timer.timer&&a.notify(u.get(t?"recess":"pomidorko"),e),document.querySelector(".pa-skip span").innerHTML=u.get("skip")[+t]}})},{"../helpers/language":3,"../helpers/utils":6,"../mvc/view":14,"../notify":15,"./about":18,"./goals":23,"./settings":24,"./timer":25}],20:[function(t,e,i){var n=t("../../mvc/view"),s=(t("../../helpers/utils"),n.extend({initialize:function(){this.input=this.find("input"),this.bind("span.pa-switch-on","click",this.switchOn),this.bind("span.pa-switch-off","click",this.switchOff)},switchOn:function(t){this.node.classList.remove("pa-bool-off"),this.node.classList.add("pa-bool-on"),t!==!0&&this.data.settings.set(this.input.className,!0)},switchOff:function(t){this.node.classList.remove("pa-bool-on"),this.node.classList.add("pa-bool-off"),t!==!0&&this.data.settings.set(this.input.className,!1)},set:function(t){this.input.checked=t,t?this.switchOn(!0):this.switchOff(!0)}}))
+e&&e>=0&&i.set("remained",e)}),i.on("change",function(){e.classList.toggle("resting",i.get("recess")),a.request()}),s.on("stop",function(){n.get("sound")&&o.play()}),s.on("start",this.update.bind(this)),s.on("stop",this.stop.bind(this))},setupViews:function(){this.timer=new r(this.find(".pa-timer"),u.merge(this.data,{recess:this.find(".pa-skip span")})),this.goals=new s(this.find(".pa-goals"),this.data),this.about=new o(this.find(".pa-about"),{button:this.find(".pa-about-button")}),this.settings=new n(this.find(".pa-settings"),{settings:this.data.settings,button:this.find(".pa-settings-button")})},update:function(){var t=this.data.goals.get("recess"),e=t?"assets/img/break.ico":"assets/img/work.ico"
+document.title=c.get(t?"recess":"work")+" — "+c.get("title","помидорковый таймер"),document.querySelector("link[rel=icon]").href=e,document.querySelector(".pa-skip span").innerHTML=c.get("skip")[+t]},stop:function(){var t=this.data.goals.get("recess"),e=t?"assets/img/break.ico":"assets/img/work.ico"
+this.data.settings.get("notifications")===!0&&a.notify(c.get(t?"recess":"pomidorko"),e)}})},{"../helpers/language":3,"../helpers/utils":6,"../mvc/view":14,"../notify":15,"./about":18,"./goals":23,"./settings":24,"./timer":25}],20:[function(t,e,i){var n=t("../../mvc/view"),s=(t("../../helpers/utils"),n.extend({initialize:function(){this.input=this.find("input"),this.bind("span.pa-switch-on","click",this.switchOn),this.bind("span.pa-switch-off","click",this.switchOff)},switchOn:function(t){this.node.classList.remove("pa-bool-off"),this.node.classList.add("pa-bool-on"),t!==!0&&this.data.settings.set(this.input.className,!0)},switchOff:function(t){this.node.classList.remove("pa-bool-on"),this.node.classList.add("pa-bool-off"),t!==!0&&this.data.settings.set(this.input.className,!1)},set:function(t){this.input.checked=t,t?this.switchOn(!0):this.switchOff(!0)}}))
 e.exports=s},{"../../helpers/utils":6,"../../mvc/view":14}],21:[function(t,e,i){e.exports={number:t("./number"),bool:t("./bool")}},{"./bool":20,"./number":22}],22:[function(t,e,i){var n=t("../../mvc/view"),s=n.extend({initialize:function(){var t=this.data.settings,e=this.find("input")
 this.input=e,this.bind(".plus","click",this.add),this.bind(".minus","click",this.sub),this.bind("input","change",function(){var i=parseInt(e.value)
 t.set(e.className,isNaN(i)?0:Math.round(i))})},add:function(t){this.perform(t,1)},sub:function(t){this.perform(t,-1)},perform:function(t,e){t.preventDefault()
