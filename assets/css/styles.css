@@ -557,10 +557,7 @@ iframe {
     }
 }
 
-@media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
-       only screen and (-moz-min-device-pixel-ratio: 1.5),
-       only screen and (-o-min-device-pixel-ratio: 3/2),
-       only screen and (min-device-pixel-ratio: 1.5) {
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .pa-timer-control span {
         background-image: url('../img/play-pause@2x.png');
         background-size: 128px 64px;
