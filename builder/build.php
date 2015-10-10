@@ -43,22 +43,20 @@ function json_file ($file) {
     return $data;
 }
 
-!file_exists('build') and mkdir('build');
+if (!file_exists('build')) {
+    mkdir('build');
+}
 
 foreach (glob(__DIR__ . '/lang/*.json') as $file) {
-    $filename = str_replace(dirname($file), '', $file);
-    $filename = ltrim($filename, '/');
+    $filename = ltrim(str_replace(dirname($file), '', $file), '/');
     
     $data = json_file($file);
-    $file = explode('.', $filename);
-    $file = current($file);
+    $file = current(explode('.', $filename));
     
     $data = array_merge($data, [
         'data'       => json_file(__DIR__ . '/preferences.json'),
         'production' => isset($_SERVER['argv'][1])
     ]);
     
-    $filepath = "build/$file.html";
-    
-    file_put_contents($filepath, capture('layout.php', $data));
+    file_put_contents("build/$file.html", capture('layout.php', $data));
 }

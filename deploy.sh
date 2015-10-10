@@ -3,6 +3,7 @@
 # FTP deploy script
 source ./ftp.sh
 
+# Variables
 DOMAIN="$1"
 LANG="$2"
 FILES=$(git diff --name-only HEAD~1 HEAD)
