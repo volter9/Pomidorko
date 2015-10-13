@@ -28,7 +28,7 @@ build_templates_production:
 
 # JS compilation
 build_js:
-	browserify lib/app.js -o assets/js/main.js --standalone "App"
+	browserify lib/index.js -o assets/js/main.js --standalone "pomidorko"
 
 minify_js: build_js
 	minify --output assets/js/main.js assets/js/main.js

@@ -3,8 +3,46 @@
 <script src="assets/js/likely.js" 
         type="text/javascript"></script>
 <script type="text/javascript">
-    App.language = <?php echo json_encode($js, JSON_UNESCAPED_UNICODE) ?>;
-    App.initiate(document.getElementById('pomidorka'));
+    var components = pomidorko.components,
+        dom        = pomidorko.dom;
+
+    var container = dom.find('#pomidorka'),
+        timer     = new pomidorko.Timer,
+        data      = pomidorko.bootstrap(pomidorko.config);
+
+    var settings = data.settings,
+        goals    = data.goals;
+
+    pomidorko.lang.set(<?php echo json_encode($js, JSON_UNESCAPED_UNICODE) ?>);
+
+    var services = [
+        new components.PlayPause(dom.find('.pa-timer-control'), timer),
+        new components.State(container, timer, goals, settings),
+        new components.Scale(dom.find('.pa-timer-wrapper'), timer),
+        new components.Time(dom.find('.pa-timer-time'), timer),
+        new components.Skip(dom.find('.pa-skip'), timer, goals),
+        new components.Goals(dom.find('.pa-goals'), goals, settings),
+        new components.TickTock(
+            timer, settings, new Audio('assets/sounds/tick.mp3')
+        ),
+        new components.Sound(
+            timer, settings, new Audio('assets/sounds/bell.mp3')
+        ),
+        new components.About(
+            dom.find('.pa-about-button'), dom.find('.pa-about')
+        ),
+        new components.Favicon(dom.find('[rel=icon]'), timer, goals),
+        new components.Title(timer, goals),
+        new components.Notifications(timer, goals, settings),
+        new components.Settings(
+            dom.find('.pa-settings-button'), 
+            dom.find('.pa-settings'), settings
+        )
+    ];
+
+    services.forEach(function (service) {
+        service.activate();
+    });
 </script>
 
 <?php if ($production): ?>

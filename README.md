@@ -72,3 +72,27 @@ Front-end написан на JS с использованием модулей 
 - `make deploy` чтобы залить все локализации (Русскую и Английскую)
 - `make deploy_en` чтобы залить только Английскую версию
 - `make deploy_ru` чтобы залить только Русскую версию
+
+    var container = pomidorko.dom.find('#pomidorko'),
+        data      = pomidorko.bootstrap(App.config.key);
+
+    var timer = new pomidorko.Timer();
+
+    var services = {
+        notifications: new pomidorko.components.Notifications(),
+        playPause:     new pomidorko.components.PlayPause(),
+        settings:      new pomidorko.components.Settings(),
+        tickTock:      new pomidorko.components.TickTock()
+        favicon:       new pomidorko.components.Favicon(),
+        about:         new pomidorko.components.About(),
+        goals:         new pomidorko.components.Goals(),
+        scale:         new pomidorko.components.Scale(),
+        sound:         new pomidorko.components.Sound(),
+        title:         new pomidorko.components.Title(),
+        time:          new pomidorko.components.Time(),
+        skip:          new pomidorko.components.Skip()
+    };
+
+    var app = new pomidorko.App(container, services);
+
+    app.run();
