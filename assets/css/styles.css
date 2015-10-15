@@ -93,14 +93,14 @@ iframe {
 .pa-title, 
 .pa-settings-button {
     position: absolute;
-    top: 10px;
     
     font-size: 18px;
     font-weight: bold;
-    padding: 0.8em 2em .85em;
+    padding: 0.8em 2em .9em;
 }
 
 .pa-title {
+	top: 10px;
     left: 38px;
     z-index: 9003;
     
@@ -109,12 +109,13 @@ iframe {
 }
 
 .pa-settings-button {
-    background-color: rgba(255,255,255,.3);
+    background-color: rgba(255,255,255,.21);
     border: 0px;
     border-radius: 5px;
     color: #fff;
     line-height: 110%;
-    
+
+	top: 11px;
     right: 38px;
     z-index: 9000;
 }
@@ -126,12 +127,12 @@ iframe {
     line-height: 100%;
     
     position: absolute;
-    bottom: 30px;
     
     padding-bottom: 1px;
 }
 
 .pa-goals {
+	bottom: 30px;
     left: 38px;
 }
 
@@ -149,7 +150,8 @@ iframe {
     background-color: transparent;
     border: 0px;
     border-bottom: 1px solid rgba(255, 255, 255 ,0.2);
-    
+
+	bottom: 29px;
     right: 38px;
     z-index: 9002;
 }
@@ -453,10 +455,6 @@ iframe {
     margin-right: 12px;
 }
 
-.pa-settings .pa-switch-off {
-    margin-right: 26px;
-}
-
 .pa-settings .pa-cell {
     border: 1px solid rgba(255,255,255,.6);
     border-radius: 4px;
@@ -466,6 +464,10 @@ iframe {
     padding: 0.25em 0.5em;
     margin: 0px 0.5em;
     width: 80px;
+}
+
+.pa-settings .pa-control {
+	margin-right: -7px;
 }
 
 .pa-settings .pa-control input {
