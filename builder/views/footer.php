@@ -5,7 +5,9 @@
 <script type="text/javascript">
     var components = pomidorko.components,
         dom        = pomidorko.dom;
-
+    
+    pomidorko.bootstrap.reset();
+    
     var container = dom.find('#pomidorka'),
         timer     = new pomidorko.Timer,
         data      = pomidorko.bootstrap(pomidorko.config);
@@ -37,7 +39,8 @@
         new components.Settings(
             dom.find('.pa-settings-button'), 
             dom.find('.pa-settings'), settings
-        )
+        ),
+        new components.Save(timer, goals)
     ];
 
     services.forEach(function (service) {
