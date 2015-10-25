@@ -26,8 +26,12 @@ e.exports=n.extend({constructor:function(t,e,i){this.timer=t,this.goals=e,this.s
 this.timer.on("stop",this.notify.bind(this)),this.settings.on("change",function(){t.settings.get("notifications")===!0&&s.request()})},notify:function(){if(this.settings.get("notifications")){var t=this.goals.get("recess")?"recess":"pomidorko"
 s.notify(o.get(t))}}})},{"../helpers/language":24,"../notify":35,"./component":3}],8:[function(t,e,i){var n=t("./component")
 e.exports=n.extend({constructor:function(t,e){this.control=t,this.timer=e,this.icon=t.querySelector(".pa-icon")},activate:function(){var t=this
-this.timer.on("stop",function(){t.toggleState(!0)}),this.timer.on("start",function(){t.toggleState(!1)}),this.control.addEventListener("click",function(){var e=t.timer.isRunning()
-t.toggle(e),t.toggleState(e)})},toggle:function(t){t?this.timer.pause():this.timer.start()},toggleState:function(t){var e=this.icon
+this.timer.on("stop",function(){t.toggleState(!0)}),this.timer.on("start",function(){t.toggleState(!1)})
+var e=function(){var e=t.timer.isRunning()
+t.toggle(e),t.toggleState(e)}
+this.control.addEventListener("click",e),window.addEventListener("keyup",function(t){t.preventDefault()
+var i=t.which||t.keyCode
+32===i&&e()})},toggle:function(t){t?this.timer.pause():this.timer.start()},toggleState:function(t){var e=this.icon
 e.classList.toggle("pa-pause",!t),e.classList.toggle("pa-play",t),this.control.classList.toggle("pa-play",t)}})},{"./component":3}],9:[function(t,e,i){var n=t("./component")
 e.exports=n.extend({constructor:function(t,e){this.timer=t,this.goals=e},activate:function(){var t=this.timer,e=this.goals
 window.addEventListener("beforeunload",function(){var i=t.getRemained()
