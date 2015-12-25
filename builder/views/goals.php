@@ -5,7 +5,7 @@
 </div>
 
 <div class="pa-app">
-    <a href="apps/">
+    <a href="apps/" target="_blank">
         <?php echo $app ?>
     </a>
 </div>
