@@ -25,8 +25,8 @@ mkdir assets/css
 mkdir assets/img
 mkdir assets/sounds
 mkdir apps
-put -zf ./pomidorko.zip apps/pomidorko.zip
-put -zf ./build/$LANG/apps/index.html apps/index.php
-put -zf ./build/$LANG/index.html index.php
+put -z ./assets/js/main.js ./assets/js/main.js
+put -z ./build/$LANG/apps/index.html apps/index.php
+put -z ./build/$LANG/index.html index.php
 $FILES
 EOF
