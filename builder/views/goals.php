@@ -3,3 +3,9 @@
     <span class="pa-total">0</span> <?php echo $pomidorkas ?> 
     <span class="pa-status hidden"></span>
 </div>
+
+<div class="pa-app">
+    <a href="apps/">
+        <?php echo $app ?>
+    </a>
+</div>

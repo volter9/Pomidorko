@@ -20,10 +20,19 @@ all: build
 
 # Compile templates via PHP
 build_templates:
+	mkdir build
 	php $(BUILDER)
 
 build_templates_production:
+	mkdir build
 	php $(BUILDER) true
+
+# Link building assets
+link_assets:
+	for FOLDER in build/*;                  \
+	do                                      \
+		ln -s ../../assets $$FOLDER/assets; \
+	done
 
 # JS compilation
 build_js:
@@ -33,22 +42,14 @@ minify_js: build_js
 	minify --output assets/js/main.js assets/js/main.js
 
 # Build testing folder
-test: clean build_templates build_js
-	for FOLDER in build/*;                  \
-	do                                      \
-		ln -s ../../assets $$FOLDER/assets; \
-	done
+test: clean build_templates build_js link_assets
 
 # Build a zip
 zip: build
 	zip -FSr build.zip ./build -x *.DS_Store\*
 
 # Prepare build files
-build: clean build_templates_production minify_js
-	for FOLDER in build/*;                  \
-	do                                      \
-		ln -s ../../assets $$FOLDER/assets; \
-	done
+build: clean build_templates_production minify_js link_assets
 
 # Clean build and tests files
 clean:

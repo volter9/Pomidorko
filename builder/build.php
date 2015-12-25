@@ -9,7 +9,7 @@
 function render ($__view__, $__data__) {
     extract($__data__);
     
-    require(__DIR__ . '/' . $__view__);
+    require(__DIR__ . "/$__view__");
 }
 
 /**
@@ -43,21 +43,41 @@ function json_file ($file) {
     return $data;
 }
 
-if (!file_exists('build')) {
-    mkdir('build');
+/**
+ * @param string $path
+ * @param string $basepath
+ */
+function expand_path($path, $basepath = '') {
+    $frags = explode('/', trim($path, '/'));
+    $path  = rtrim($basepath, '/');
+    
+    while ($frags) {
+        $frag  = array_shift($frags);
+        $path .= "/$frag";
+        
+        if (!file_exists($path) && strpos($frag, '.') <= 0) {
+            mkdir($path);
+        }
+    }
 }
 
-foreach (glob(__DIR__ . '/lang/*.json') as $file) {
-    $filename = ltrim(str_replace(dirname($file), '', $file), '/');
+$schemes = json_file(__DIR__ . '/schemes.json');
+
+foreach ($schemes as $scheme) {
+    foreach ($scheme['lang'] as $language => $destination) {
+        $data = [
+            'production' => isset($_SERVER['argv'][1])
+        ];
     
-    $data = json_file($file);
-    $file = current(explode('.', $filename));
-    
-    $data = array_merge($data, [
-        'data'       => json_file(__DIR__ . '/preferences.json'),
-        'production' => isset($_SERVER['argv'][1])
-    ]);
-    
-    !is_dir("build/$file") and mkdir("build/$file");
-    file_put_contents("build/$file/index.html", capture('layout.php', $data));
+        if (!empty($scheme['data'])) {
+            foreach ($scheme['data'] as $key => $value) {
+                $data[$key] = json_file(__DIR__ . "/$value");
+            }
+        }
+        
+        $data = array_merge(json_file(__DIR__ . "/$language"), $data);
+        
+        expand_path($destination, dirname(__DIR__));
+        file_put_contents($destination, capture($scheme['layout'], $data));
+    }
 }

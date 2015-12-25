@@ -1,0 +1,19 @@
+[
+    {
+        "layout": "views/layout.php",
+        "data": {
+            "data": "preferences.json"
+        },
+        "lang": {
+            "lang/en.json": "build/en/index.html",
+            "lang/ru.json": "build/ru/index.html"
+        }
+    },
+    {
+        "layout": "views/apps.php",
+        "lang": {
+            "lang/apps.en.json": "build/en/apps/index.html",
+            "lang/apps.ru.json": "build/ru/apps/index.html"
+        }
+    }
+]

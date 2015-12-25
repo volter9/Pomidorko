@@ -1,0 +1,118 @@
+html,
+body {
+	height: 100% !important;
+}
+
+body {
+	background-image: url(../apps/bg2560.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.col {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.pa-title {
+ 	font-size: 18px;
+	font-weight: bold;
+	text-shadow: 0 1px 3px rgba(0,0,0,.1),
+				 0 2px 11px rgba(0,0,0,.3);
+
+	display: inline-block;
+ 	margin: 24px 0 0 38px;
+	
+	border-radius: 4px;
+}
+
+.pa-title a {
+ 	color: #fff;
+	text-decoration: none;
+	border-bottom: 1px solid rgba(255,255,255,.4);
+}
+
+.pa-title a:hover {
+	border-bottom: 1px solid rgba(255,255,255,.8);
+}
+
+#time {
+	position: absolute;
+	top: 19px;
+	right: 31px;
+}
+
+#center {
+	width: auto;
+	margin: 170px auto 0;
+	position: relative;
+	text-align: center;
+}
+
+#main-h {
+	color: #fff;
+	font-size: 40px;
+	line-height: 1.2;
+	font-weight: 300;
+	text-shadow: 0 3px 13px rgba(0,0,0,.15);
+	margin: 0;
+}
+
+#download {
+	background: #fe3;
+	box-shadow: 0 1px 0 0 #867d0d;
+	
+	font-size: 18px;
+	color: #000;
+	
+	margin-top: 14px;
+	padding: 9px 20px 11px;
+	margin-top: 2px;
+	border: none;
+	border-radius: 4px;
+	
+	cursor: pointer;
+	
+	position: relative;
+}
+
+#download:active {
+	box-shadow: none;
+	top: 1px;
+}
+
+.likely {
+	position: absolute;
+	bottom: 30px;
+	left: 38px;
+}
+
+#donate {
+	background: rgba(44,66,88,.4);
+	border-radius: 3px;
+	color: #fff;
+	font-size: 14px;
+	text-shadow: 0 1px 3px rgba(0,0,0,.6);
+	display: inline-block;
+	padding: 12px 24px 15px;
+	position: absolute;
+	bottom: 15px;
+	right: 14px;
+}
+
+#donate-h {
+	margin: 3px 0 9px;
+	font-size: 16px;
+}
+
+.donate-btn {
+	margin: 4px 0 0 -4px;
+}
+
+.col.card {
+	margin-left: 18px;
+}
