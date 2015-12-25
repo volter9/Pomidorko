@@ -26,6 +26,8 @@
             <h1 id="main-h"><?php echo $tagline ?></h1>
             <br>
             <a href="./pomidorko.zip" id="download"><?php echo $download_for_osx ?></a>
+            <br>
+            <span class="caption">Если вы&nbsp;увидите предупреждение &laquo;Программа &bdquo;Помидорко&ldquo; не&nbsp;может быть открыта...&raquo;, в&nbsp;Настройках в&nbsp;Защите и&nbsp;безопасности нажмите <i>Подтвердить вход</i></span>
         </div>
 
         <div class="likely likely-light">
