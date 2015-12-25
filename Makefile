@@ -10,7 +10,6 @@
 BUILD_FILES=build/*.html
 BUILDER=builder/build.php
 
-TEST_FOLDER=tests
 FTP=./deploy.sh
 FULL_DEPLOY=''
 
@@ -34,24 +33,22 @@ minify_js: build_js
 	minify --output assets/js/main.js assets/js/main.js
 
 # Build testing folder
-test: build_templates build_js
-	rm -rf $(TEST_FOLDER)
-	mkdir $(TEST_FOLDER)
-	
-	ln -s ../assets tests/assets
-	
-	for FILE in build/*.html;                   \
-do                                              \
-    cp $$FILE "$(TEST_FOLDER)/$${FILE#build/}"; \
-done
+test: clean build_templates build_js
+	for FOLDER in build/*;                  \
+	do                                      \
+		ln -s ../../assets $$FOLDER/assets; \
+	done
 
 # Build a zip
 zip: build
 	zip -FSr build.zip ./build -x *.DS_Store\*
 
 # Prepare build files
-build: build_templates_production minify_js
-	cp -r assets build
+build: clean build_templates_production minify_js
+	for FOLDER in build/*;                  \
+	do                                      \
+		ln -s ../../assets $$FOLDER/assets; \
+	done
 
 # Clean build and tests files
 clean:

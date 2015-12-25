@@ -23,6 +23,6 @@ mkdir assets/js
 mkdir assets/css
 mkdir assets/img
 mkdir assets/sounds
-put -zf ./build/$LANG.html index.php
+put -zf ./build/$LANG/index.html index.php
 $FILES
 EOF

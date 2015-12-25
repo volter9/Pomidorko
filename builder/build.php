@@ -58,5 +58,6 @@ foreach (glob(__DIR__ . '/lang/*.json') as $file) {
         'production' => isset($_SERVER['argv'][1])
     ]);
     
-    file_put_contents("build/$file.html", capture('layout.php', $data));
+    !is_dir("build/$file") and mkdir("build/$file");
+    file_put_contents("build/$file/index.html", capture('layout.php', $data));
 }
