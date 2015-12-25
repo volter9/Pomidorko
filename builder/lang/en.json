@@ -1,6 +1,6 @@
 {
     "description": "Helps to focus on the work from the next tab",
-    "pomidorkas": "completed pomodoros",
+    "pomidorkas": "pomodoros",
     "stylesheet": "assets/css/styles.css",
     "settings": "Settings",
     "of_total": "out of",
