@@ -25,7 +25,7 @@
         <div id="center">
             <h1 id="main-h"><?php echo $tagline ?></h1>
             <br>
-            <button id="download"><?php echo $download_for_osx ?></button>
+            <a href="./pomidorko.zip" id="download"><?php echo $download_for_osx ?></a>
         </div>
 
         <div class="likely likely-light">

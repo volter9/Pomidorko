@@ -19,10 +19,14 @@ ncftp <<EOF
 open -u '$USER' -p '$PASS' '$HOST'
 cd /www/pomidorko.$DOMAIN 
 mkdir assets
+mkdir assets/apps
 mkdir assets/js
 mkdir assets/css
 mkdir assets/img
 mkdir assets/sounds
+mkdir apps
+put -zf ./pomidorko.zip apps/pomidorko.zip
+put -zf ./build/$LANG/apps/index.html apps/index.php
 put -zf ./build/$LANG/index.html index.php
 $FILES
 EOF
