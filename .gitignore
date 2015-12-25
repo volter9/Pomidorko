@@ -6,5 +6,7 @@ build.zip
 build/
 tests/
 release/
+assets/js/main.js
 
+# Top secret
 ftp.sh
