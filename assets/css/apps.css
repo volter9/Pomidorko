@@ -70,9 +70,9 @@ body {
 	color: #000;
     text-decoration: none;
 	
+    display: inline-block;
 	margin-top: 14px;
 	padding: 9px 20px 11px;
-	margin-top: 2px;
 	border: none;
 	border-radius: 4px;
 	
