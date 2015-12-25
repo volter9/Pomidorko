@@ -34,6 +34,7 @@
             dom.find('.pa-about-button'), dom.find('.pa-about')
         ),
         new components.Favicon(dom.find('[rel=icon]'), timer, goals),
+        new components.Download(dom.find('.pa-app'), goals, settings),
         new components.Title(timer, goals),
         new components.Notifications(timer, goals, settings),
         new components.Settings(

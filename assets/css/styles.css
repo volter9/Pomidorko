@@ -149,7 +149,7 @@ iframe {
 .pa-about-button {
     background-color: transparent;
     border: 0px;
-    border-bottom: 1px solid rgba(255, 255, 255 ,0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
 	bottom: 29px;
     right: 38px;
@@ -157,7 +157,30 @@ iframe {
 }
 
 .pa-about-button:hover {
-    border-bottom: 1px solid rgba(255, 255, 255 ,0.6);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.pa-app {
+    font-size: 14px;
+    line-height: 100%;
+
+    position: absolute;
+
+    padding-bottom: 1px;
+	bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+}
+
+.pa-app a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-decoration: none;
+}
+
+.pa-app a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 /**
