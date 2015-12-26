@@ -56,9 +56,7 @@
         <script src="../assets/js/likely.js" 
                 type="text/javascript"></script>
         <script type="text/javascript">
-            document.getElementById('download').addEventListener('click', function (e) {
-                e.preventDefault();
-                
+            document.getElementById('download').addEventListener('click', function () {
                 var caption = document.querySelector('.fix');
                 
                 if (caption.classList.contains('hidden')) {
