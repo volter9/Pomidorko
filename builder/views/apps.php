@@ -27,9 +27,10 @@
             <br>
             <a href="./pomidorko.zip" id="download"><?php echo $download_for_osx ?></a>
             <br>
-            <span class="caption"><?php echo $security_hint ?></span>
-            <br>
-            <span class="caption fix hidden"><?php echo $shortcut_hint ?></span>
+            <div class="fix hidden">
+                <span class="caption"><?php echo $security_hint ?></span>
+                <span class="caption"><?php echo $shortcut_hint ?></span>
+            </div>
         </div>
 
         <div class="likely likely-light">
