@@ -87,14 +87,14 @@ body {
 }
 
 .caption {
-	display: inline-block;
+	display: block;
 	width: 250px;
-	margin-top: 12px;
+	margin: 12px auto 0;
 	
 	font-size: 11px;
 	line-height: 1.25;
-	color: rgba(255,255,255,.7);
-	text-shadow: 0 1px 7px rgba(0,0,0,.3);
+	color: rgba(255,255,255,.8);
+	text-shadow: 0 1px 3px rgba(0, 0, 0, .5), 0 1px 15px rgba(0, 0, 0, .75);
 }
 
 .likely {
