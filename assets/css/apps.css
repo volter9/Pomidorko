@@ -13,6 +13,21 @@ body {
 	position: relative;
 }
 
+.appear {
+    -webkit-animation: appear 1s ease-out;
+    animation: appear 1s ease-out;
+}
+
+@-webkit-keyframes appear {
+    from { opacity: 0; }
+    to   { opacity: 0.8; }
+}
+
+@keyframes appear {
+    from { opacity: 0; }
+    to   { opacity: 0.8; }
+}
+
 .col {
 	display: inline-block;
 	vertical-align: top;
@@ -93,8 +108,9 @@ body {
 	
 	font-size: 11px;
 	line-height: 1.25;
-	color: rgba(255,255,255,.8);
-	text-shadow: 0 1px 3px rgba(0, 0, 0, .5), 0 1px 15px rgba(0, 0, 0, .75);
+    color: #fff;
+	opacity: 0.8;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, .7), 0 1px 15px rgba(0, 0, 0, .85);
 }
 
 .likely {
@@ -127,4 +143,8 @@ body {
 
 .col.card {
 	margin-left: 18px;
+}
+
+.hidden {
+    display: none;
 }

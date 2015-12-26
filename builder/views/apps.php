@@ -28,6 +28,8 @@
             <a href="./pomidorko.zip" id="download"><?php echo $download_for_osx ?></a>
             <br>
             <span class="caption"><?php echo $security_hint ?></span>
+            <br>
+            <span class="caption fix hidden"><?php echo $shortcut_hint ?></span>
         </div>
 
         <div class="likely likely-light">
@@ -53,7 +55,19 @@
 
         <script src="../assets/js/likely.js" 
                 type="text/javascript"></script>
-
+        <script type="text/javascript">
+            document.getElementById('download').addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                var caption = document.querySelector('.fix');
+                
+                if (caption.classList.contains('hidden')) {
+                    caption.classList.remove('hidden');
+                    caption.classList.add('appear');
+                }
+            });
+        </script>
+        
         <?php if ($production): ?> 
         <!-- Yandex.Metrika counter -->
         <script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter32028086 = new Ya.Metrika({id:32028086, webvisor:true, clickmap:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script>
