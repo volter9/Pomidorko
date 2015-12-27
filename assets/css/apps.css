@@ -14,8 +14,8 @@ body {
 }
 
 .appear {
-    -webkit-animation: appear 1s ease-out;
-    animation: appear 1s ease-out;
+    -webkit-animation: appear 0.3s ease-out;
+    animation: appear 0.3s ease-out;
 }
 
 @-webkit-keyframes appear {
