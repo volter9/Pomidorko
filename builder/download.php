@@ -9,4 +9,4 @@ $counter = is_file($file) ? (int)file_get_contents($file) : 0;
 
 file_put_contents($file, $counter + 1);
 
-readfile(__DIR__ . '/pomidorko.zip');
+readfile(__DIR__ . '/_pomidorko.zip');
