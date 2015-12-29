@@ -25,7 +25,7 @@
         <div id="center">
             <h1 id="main-h"><?php echo $tagline ?></h1>
             <br>
-            <a href="./pomidorko.zip" id="download"><?php echo $download_for_osx ?></a>
+            <a href="./download.php" id="download"><?php echo $download_for_osx ?></a>
             <br>
             <div class="fix hidden">
                 <span class="caption"><?php echo $security_hint ?></span>

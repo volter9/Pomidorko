@@ -25,7 +25,9 @@ mkdir assets/css
 mkdir assets/img
 mkdir assets/sounds
 mkdir apps
+mkdir apps/_counter
 put -z ./assets/js/main.js ./assets/js/main .js
+put -z ./builder/download.php apps/download.php
 put -z ./build/$LANG/apps/index.html apps/index.php
 put -z ./build/$LANG/index.html index.php
 $FILES

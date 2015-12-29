@@ -31,6 +31,9 @@ build_templates_production:
 link_assets:
 	for FOLDER in build/*;                  \
 	do                                      \
+		mkdir $$FOLDER/apps/_counter;       \
+		cp builder/download.php $$FOLDER/apps/download.php; \
+		cp pomidorko.zip $$FOLDER/apps/pomidorko.zip; \
 		ln -s ../../assets $$FOLDER/assets; \
 	done
 
@@ -64,3 +67,7 @@ deploy_ru: build
 	$(FTP) 'ru' 'ru' $(FULL_DEPLOY)
 
 deploy: deploy_en deploy_ru
+
+# Start PHP webserver
+server: test
+	php -S localhost:2000 -t build
