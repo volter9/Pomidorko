@@ -4,7 +4,7 @@
     "pomodoro_timer": "Pomodoro timer",
     "tagline": "Million of tasks<br>with one timer",
     "download_for_osx": "Download for OS X",
-    "security_hint": "If you'll&nbsp;see warning “‘Pomidorko.app’ can’t be opened…”, open&nbsp;System Preferences, in&nbsp;Security &amp;&nbsp;Privacy click on lock, and in the bottom part of the window select ”Anywhere”",
+    "security_hint": "If you'll&nbsp;see warning “‘Pomidorko.app’ can’t be opened…”, open&nbsp;System Preferences, in&nbsp;Security &amp;&nbsp;Privacy click on lock, and in the bottom part of the window select “Anywhere”",
     "shortcut_hint": "To make global play-pause keyboard shortcut work, check the checkbox for Pomidorko in&nbsp;Security &amp;&nbsp;Privacy in&nbsp;section Privacy",
     "support": "Support the project",
     "yad": "Yandex-money",
