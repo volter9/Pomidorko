@@ -1,74 +1,56 @@
-# Помидорка
+# Pomidorko the web app
 
-Помидорковый таймер в браузере. 
+Pomodoro timer in your browser. Front-end is written on JS with the use of CommonJS modules and compilation of code base into one file (with browserify). HTML templates are compiled for different languages via small PHP script.
 
-Front-end написан на JS с использованием модулей (а ля CommonJS) и компиляция через browerify. Шаблоны для разных локализаций (ru, en) собираются с помощью PHP.
+## Build requirements
 
-## Что нужно для работы над помидокой
+To build Pomidorko you need following software:
 
-Для работы над помидоркой нужны следующии инструменты и ПО:
+- PHP 5.4+
+- npm modules: browerify and minifier
+- ncftp (only for FTP deploy)
 
-- PHP 5.4 и выше
-- npm модули: browerify и minifier
-- ncftp (только для деплоя по FTP)
+<!-- I'm way too lazy to translate the software installation process -->
 
-Если все это есть то можно начать инициализацию.
+## Initialization and building
 
-## Установить нужное ПО для работы (для OS X)
-
-Установи сначала [brew](http://brew.sh).
-
-### PHP 5.4
-
-Сначала надо проверить версию. Если версия PHP (`php -v`) меньше чем 5.4 то надо установить PHP 5.4 или выше:
-
-    # К примеру, PHP 5.5
-    brew install php55
-
-### npm модули
-
-Если npm не установлен в системе (можно это посмотреть попробовав запустить комманду `npm`), тогда нужно сначала установить npm:
-
-    brew install npm
-
-После этого можно установить два нужных пакета:
-
-    sudo npm install -g browserify
-    sudo npm install -g minify
-
-### ncftp
-
-Для деплоя нужна коммандная утилита ncftp. Если она еще не установлена в системе то:
-
-    brew install ncftp
-
-## Инициализация и сборка
-
-Чтобы собрать проект (не загрузив файлы через FTP на сервер), нужно запустить мэйк таском `release`:
+To build the project you need to run following bash command into terminal (first `cd` to repository):
 
     make release
 
-После завершения работы этой команды должна появится папка `build` и там будет скомпилированные файлы готовые к отправке или тестированию. Для того что бы собрать проект и потестировать воспользуйся таском `test`:
+After the command is finished, you'll see folder `build` in repository's folder. This folder contains compiled files of Pomidorko web app (compiled JS, localized HTMLs). If you want to test the application, you need to run another comamnd:
 
     make test
 
-Также есть таск `zip` для сборки всего (скомпилированного) проекта в zip файл:
+This command will build the project, but also will create `test` folder with testing files. Open `.html`s in the browser and test the application.
 
-    make zip
+If you want to build and zip the app, you can run `make zip` to build and zip the application in file `build.zip`.
 
-### Деплой
+Read `Makefile` for more information.
 
-Для деплоя проекта на FTP сервер нужно указать создать файл `ftp.sh` рядом с `deploy.sh` и указать там информацию о подсоединение к FTP серверу. Что-то вроде:
+### Deploy via FTP
 
-    # FTP хост
+To deploy this app via FTP, you'll need to create file `ftp.sh` in the main folder of repository (where files `Makefile` and `.gitignore` are located) and save it with following variables:
+
+    # FTP host
     HOST='host'
     
-    # Имя и пароль FTP пользователя
+    # User name and password for FTP auth
     USER='user'
     PASS='****'
 
-После создания этого файла, можно воспользоватся тасками:
+After creating this file and filling it with proper data to authorize on your FTP server, you may use following commands to deploy the application:
 
-- `make deploy` чтобы залить все локализации (Русскую и Английскую)
-- `make deploy_en` чтобы залить только Английскую версию
-- `make deploy_ru` чтобы залить только Русскую версию
+- `make deploy` deploy all localized versions
+- `make deploy_en` deploy only English version
+- `make deploy_ru` deploy only Russian version
+
+You may want to modify the `deploy.sh` command to suit your server folder structure.
+
+## Wanna continue development?
+
+Please contact pasha@omelekhin.ru. He's the organizer of this project, he'll need a new developer to continue developing this project (Pomidorko for iOS and iWatch).
+
+Happy coding 😄 !
+
+Also checkout the Pomidorko OS X repository.
