@@ -53,4 +53,4 @@ Please contact pasha@omelekhin.ru. He's the organizer of this project, he'll nee
 
 Happy coding 😄 !
 
-Also checkout the Pomidorko OS X repository.
+Also checkout the [Pomidorko OS X](https://github.com/volter9/Pomidorko-OSX) repository.
